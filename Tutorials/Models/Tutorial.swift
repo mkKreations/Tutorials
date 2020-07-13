@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Tutorial {
+struct Tutorial: Hashable {
+	let id = UUID() // Hashable conformance
 	let title: String
 	let thumbnail: String
 	let artworkColor: String

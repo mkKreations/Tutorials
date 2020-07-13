@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Video {
+struct Video: Hashable {
+	let id = UUID() // hashable conformance
 	let title: String
 	let url: String
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Section {
+struct Section: Hashable {
+	let id = UUID() // hashable conformance
 	let title: String
 	let videos: [Video]
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Topic {
+struct Topic: Hashable {
+	let id = UUID() // hashable conformance
 	let title: String
 	let tutorials: [Tutorial]
 }
