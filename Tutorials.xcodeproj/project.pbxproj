@@ -12,6 +12,7 @@
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
 		2C2C91EB24BBDAAC00077624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E924BBDAAC00077624 /* LaunchScreen.storyboard */; };
 		2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91F324BBDB9E00077624 /* HomeViewController.swift */; };
+		2CE2642924BD092B00109C11 /* Tutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE2642824BD092B00109C11 /* Tutorials.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2C2C91EA24BBDAAC00077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C2C91EC24BBDAAC00077624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2C91F324BBDB9E00077624 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2CE2642824BD092B00109C11 /* Tutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorials.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		2C2C91DD24BBDAA900077624 /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				2CE2642724BD090A00109C11 /* Models */,
 				2C2C91F224BBDB9800077624 /* Controllers */,
 				2C2C91DE24BBDAA900077624 /* AppDelegate.swift */,
 				2C2C91E424BBDAA900077624 /* Main.storyboard */,
@@ -70,6 +73,14 @@
 				2C2C91F324BBDB9E00077624 /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2CE2642724BD090A00109C11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CE2642824BD092B00109C11 /* Tutorials.plist */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE2642924BD092B00109C11 /* Tutorials.plist in Resources */,
 				2C2C91EB24BBDAAC00077624 /* LaunchScreen.storyboard in Resources */,
 				2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */,
 				2C2C91E624BBDAA900077624 /* Main.storyboard in Resources */,
