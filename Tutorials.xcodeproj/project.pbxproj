@@ -17,6 +17,7 @@
 		2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642C24BD0B2C00109C11 /* Tutorial.swift */; };
 		2CE2642F24BD0BDF00109C11 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642E24BD0BDF00109C11 /* Section.swift */; };
 		2CE2643124BD0C4D00109C11 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2643024BD0C4D00109C11 /* Video.swift */; };
+		2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2643224BD0D0C00109C11 /* TutorialsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2CE2642C24BD0B2C00109C11 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		2CE2642E24BD0BDF00109C11 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		2CE2643024BD0C4D00109C11 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		2CE2643224BD0D0C00109C11 /* TutorialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				2CE2642C24BD0B2C00109C11 /* Tutorial.swift */,
 				2CE2642E24BD0BDF00109C11 /* Section.swift */,
 				2CE2643024BD0C4D00109C11 /* Video.swift */,
+				2CE2643224BD0D0C00109C11 /* TutorialsController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				2CE2642F24BD0BDF00109C11 /* Section.swift in Sources */,
 				2CE2643124BD0C4D00109C11 /* Video.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
+				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
 				2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */,
 				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
