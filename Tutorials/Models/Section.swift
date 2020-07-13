@@ -10,4 +10,5 @@ import Foundation
 
 struct Section {
 	let title: String
+	let videos: [Video]
 }
