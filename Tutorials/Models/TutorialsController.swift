@@ -17,7 +17,11 @@ import Foundation
 class TutorialsController {
 	var topics: [Topic]
 	
-	init() {
+	// singleton
+	static let shared = TutorialsController()
+	
+	// this only executes once using singleton
+	private init() {
 		guard let path = Bundle.main.path(forResource: "Tutorials", ofType: "plist"),
 					 let xml = FileManager.default.contents(atPath: path),
 	  let topicsData = try? PropertyListDecoder().decode([Topic].self, from: xml) else {
