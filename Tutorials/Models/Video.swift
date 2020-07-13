@@ -14,4 +14,4 @@ struct Video {
 }
 
 // so we can decode data from plist
-extension Video: Codable {}
+extension Video: Decodable {}

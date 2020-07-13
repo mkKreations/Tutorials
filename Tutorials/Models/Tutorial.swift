@@ -19,4 +19,4 @@ struct Tutorial {
 }
 
 // so we can decode data from plist
-extension Tutorial: Codable {}
+extension Tutorial: Decodable {}

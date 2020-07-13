@@ -14,4 +14,4 @@ struct Section {
 }
 
 // so we can decode data from plist
-extension Section: Codable {}
+extension Section: Decodable {}
