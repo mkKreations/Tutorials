@@ -13,6 +13,7 @@
 		2C2C91E624BBDAA900077624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E424BBDAA900077624 /* Main.storyboard */; };
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
 		2C2C91EB24BBDAAC00077624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E924BBDAAC00077624 /* LaunchScreen.storyboard */; };
+		2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91F324BBDB9E00077624 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2C2C91E724BBDAAC00077624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C2C91EA24BBDAAC00077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C2C91EC24BBDAAC00077624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C2C91F324BBDB9E00077624 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		2C2C91DD24BBDAA900077624 /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				2C2C91F224BBDB9800077624 /* Controllers */,
 				2C2C91DE24BBDAA900077624 /* AppDelegate.swift */,
 				2C2C91E024BBDAA900077624 /* SceneDelegate.swift */,
 				2C2C91E224BBDAA900077624 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				2C2C91EC24BBDAAC00077624 /* Info.plist */,
 			);
 			path = Tutorials;
+			sourceTree = "<group>";
+		};
+		2C2C91F224BBDB9800077624 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C2C91F324BBDB9E00077624 /* HomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				2C2C91E324BBDAA900077624 /* ViewController.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
 				2C2C91E124BBDAA900077624 /* SceneDelegate.swift in Sources */,
+				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
