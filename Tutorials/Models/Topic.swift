@@ -10,4 +10,5 @@ import Foundation
 
 struct Topic {
 	let title: String
+	let tutorials: [Tutorial]
 }
