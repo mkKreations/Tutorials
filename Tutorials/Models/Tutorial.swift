@@ -17,3 +17,6 @@ struct Tutorial {
 	let content: [Section]
 	let updateCount: Int
 }
+
+// so we can decode data from plist
+extension Tutorial: Codable {}

@@ -12,3 +12,6 @@ struct Topic {
 	let title: String
 	let tutorials: [Tutorial]
 }
+
+// so we can decode data from plist
+extension Topic: Codable {}

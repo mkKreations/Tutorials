@@ -12,3 +12,6 @@ struct Video {
 	let title: String
 	let url: String
 }
+
+// so we can decode data from plist
+extension Video: Codable {}
