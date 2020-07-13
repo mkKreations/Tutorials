@@ -14,5 +14,6 @@ struct Tutorial {
 	let artworkColor: String
 	let publishDate: Date
 	let isQueued: Bool
+	let content: [Section]
 	let updateCount: Int
 }
