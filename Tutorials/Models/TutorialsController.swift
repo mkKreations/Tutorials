@@ -22,6 +22,7 @@ class TutorialsController {
 	
 	// this only executes once using singleton
 	private init() {
+		// decoding our plist into our model types
 		guard let path = Bundle.main.path(forResource: "Tutorials", ofType: "plist"),
 					 let xml = FileManager.default.contents(atPath: path),
 	  let topicsData = try? PropertyListDecoder().decode([Topic].self, from: xml) else {
