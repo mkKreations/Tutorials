@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
 	private var collectionView: UICollectionView!
 	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
+	private let controller = TutorialsController.shared
+	
 	
 	// MARK: view life cycle methods
 	override func viewDidLoad() {
@@ -18,6 +20,7 @@ class HomeViewController: UIViewController {
 		
 		configureCollectionView()
 		configureDatasource()
+		applySnapshot()
 	}
 	
 	
@@ -74,7 +77,15 @@ class HomeViewController: UIViewController {
 			}
 			cell.tutorialImageName = tutorial.thumbnail
 			cell.tutorialText = tutorial.title
-			return nil
+			return cell
 		}
+	}
+	private func applySnapshot() {
+		var snapShot = NSDiffableDataSourceSnapshot<Topic, Tutorial>()
+		snapShot.appendSections(controller.topics)
+		controller.topics.forEach { topic in
+			snapShot.appendItems(topic.tutorials, toSection: topic)
+		}
+		dataSource.apply(snapShot)
 	}
 }
