@@ -9,8 +9,27 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+	private var collectionView: UICollectionView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .green
+		
+		configureCollectionView()
+	}
+	
+	private func configureCollectionView() {
+		// passing in standard flow layout for now
+		collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.backgroundColor = .purple
+		view.addSubview(collectionView)
+		
+		layoutCollectionView()
+	}
+	private func layoutCollectionView() {
+		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+		collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 	}
 }
