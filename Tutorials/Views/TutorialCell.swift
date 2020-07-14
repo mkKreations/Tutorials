@@ -58,7 +58,7 @@ class TutorialCell: UICollectionViewCell {
 		tutorialLabel = UILabel(frame: .zero)
 		tutorialLabel.translatesAutoresizingMaskIntoConstraints = false
 		tutorialLabel.font = .preferredFont(forTextStyle: .title3)
-		tutorialLabel.textColor = .label
+		tutorialLabel.textColor = .white
 		tutorialLabel.numberOfLines = 1
 		contentView.addSubview(tutorialLabel)
 	}

@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.register(TutorialCell.self, forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
-		collectionView.backgroundColor = .purple
+		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
 		
 		layoutCollectionView()
