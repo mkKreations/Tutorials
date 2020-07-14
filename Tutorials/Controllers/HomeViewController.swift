@@ -77,6 +77,7 @@ class HomeViewController: UIViewController {
 			}
 			cell.tutorialImageName = tutorial.thumbnail
 			cell.tutorialText = tutorial.title
+			cell.tutorialBackgroundColor = tutorial.artworkColor
 			return cell
 		}
 	}
