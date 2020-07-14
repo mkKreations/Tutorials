@@ -10,13 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	private var collectionView: UICollectionView!
-	
+	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
 	
 	// MARK: view life cycle methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		configureCollectionView()
+		configureDatasource()
 	}
 	
 	
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
 		// passing in standard flow layout for now
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.register(TutorialCell.self, forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
 		collectionView.backgroundColor = .purple
 		view.addSubview(collectionView)
 		
@@ -62,5 +64,17 @@ class HomeViewController: UIViewController {
 		section.interGroupSpacing = 10.0
 		
 		return UICollectionViewCompositionalLayout(section: section)
+	}
+	private func configureDatasource() {
+		dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
+			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TutorialCell.reuseIdentifier,
+																													for: indexPath) as? TutorialCell else {
+				return nil
+			}
+			cell.tutorialImageName = tutorial.thumbnail
+			cell.tutorialText = tutorial.title
+			return nil
+		}
 	}
 }
