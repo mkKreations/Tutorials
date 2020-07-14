@@ -9,6 +9,9 @@
 import UIKit
 
 class TutorialCell: UICollectionViewCell {
+	// reuse identifier
+	static let reuseIdentifier: String = String(describing: self)
+	
 	// MARK: private vars
 	private var tutorialImageView: UIImageView!
 	private var gradientView: GradientOverlayView!
