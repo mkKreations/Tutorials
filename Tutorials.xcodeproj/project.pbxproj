@@ -13,6 +13,7 @@
 		2C2C91EB24BBDAAC00077624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E924BBDAAC00077624 /* LaunchScreen.storyboard */; };
 		2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91F324BBDB9E00077624 /* HomeViewController.swift */; };
 		2C73E35F24BD454E009755CF /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E35E24BD454E009755CF /* TutorialCell.swift */; };
+		2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */; };
 		2CE2642924BD092B00109C11 /* Tutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE2642824BD092B00109C11 /* Tutorials.plist */; };
 		2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642A24BD0ABD00109C11 /* Topic.swift */; };
 		2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642C24BD0B2C00109C11 /* Tutorial.swift */; };
@@ -30,6 +31,7 @@
 		2C2C91EC24BBDAAC00077624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2C91F324BBDB9E00077624 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2C73E35E24BD454E009755CF /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
 		2CE2642824BD092B00109C11 /* Tutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorials.plist; sourceTree = "<group>"; };
 		2CE2642A24BD0ABD00109C11 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		2CE2642C24BD0B2C00109C11 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2C73E35E24BD454E009755CF /* TutorialCell.swift */,
+				2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				2CE2643124BD0C4D00109C11 /* Video.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
 				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
+				2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
 				2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */,
 				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
