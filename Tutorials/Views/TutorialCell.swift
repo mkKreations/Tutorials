@@ -49,6 +49,8 @@ class TutorialCell: UICollectionViewCell {
 	private func instantiateTutorialViews() {
 		tutorialImageView = UIImageView(frame: .zero)
 		tutorialImageView.translatesAutoresizingMaskIntoConstraints = false
+		tutorialImageView.contentMode = .scaleAspectFill
+		tutorialImageView.clipsToBounds = true
 		contentView.addSubview(tutorialImageView)
 		
 		gradientView = GradientOverlayView(frame: .zero)
@@ -75,6 +77,6 @@ class TutorialCell: UICollectionViewCell {
 		
 		tutorialLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
 		tutorialLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0).isActive = true
-		tutorialLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16.0).isActive = true
+		tutorialLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
 	}
 }
