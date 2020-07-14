@@ -12,6 +12,10 @@
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
 		2C2C91EB24BBDAAC00077624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E924BBDAAC00077624 /* LaunchScreen.storyboard */; };
 		2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91F324BBDB9E00077624 /* HomeViewController.swift */; };
+		2C45406024BE475D00883AC0 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45405F24BE475D00883AC0 /* TitleHeaderView.swift */; };
+		2C73E35F24BD454E009755CF /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E35E24BD454E009755CF /* TutorialCell.swift */; };
+		2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */; };
+		2C80818724BD859400EBC9AD /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C80818624BD859400EBC9AD /* UIColor+extensions.swift */; };
 		2CE2642924BD092B00109C11 /* Tutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE2642824BD092B00109C11 /* Tutorials.plist */; };
 		2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642A24BD0ABD00109C11 /* Topic.swift */; };
 		2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642C24BD0B2C00109C11 /* Tutorial.swift */; };
@@ -28,6 +32,10 @@
 		2C2C91EA24BBDAAC00077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C2C91EC24BBDAAC00077624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2C91F324BBDB9E00077624 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2C45405F24BE475D00883AC0 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
+		2C73E35E24BD454E009755CF /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
+		2C80818624BD859400EBC9AD /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		2CE2642824BD092B00109C11 /* Tutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorials.plist; sourceTree = "<group>"; };
 		2CE2642A24BD0ABD00109C11 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		2CE2642C24BD0B2C00109C11 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		2C2C91DD24BBDAA900077624 /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
+				2C80818524BD854000EBC9AD /* Extensions */,
+				2C73E35D24BD451F009755CF /* Views */,
 				2CE2642724BD090A00109C11 /* Models */,
 				2C2C91F224BBDB9800077624 /* Controllers */,
 				2C2C91DE24BBDAA900077624 /* AppDelegate.swift */,
@@ -83,6 +93,24 @@
 				2C2C91F324BBDB9E00077624 /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C73E35D24BD451F009755CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C73E35E24BD454E009755CF /* TutorialCell.swift */,
+				2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */,
+				2C45405F24BE475D00883AC0 /* TitleHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C80818524BD854000EBC9AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C80818624BD859400EBC9AD /* UIColor+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2CE2642724BD090A00109C11 /* Models */ = {
@@ -171,10 +199,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE2642F24BD0BDF00109C11 /* Section.swift in Sources */,
+				2C73E35F24BD454E009755CF /* TutorialCell.swift in Sources */,
 				2CE2643124BD0C4D00109C11 /* Video.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
 				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
+				2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
+				2C45406024BE475D00883AC0 /* TitleHeaderView.swift in Sources */,
+				2C80818724BD859400EBC9AD /* UIColor+extensions.swift in Sources */,
 				2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */,
 				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
 			);
