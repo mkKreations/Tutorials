@@ -21,7 +21,7 @@ class GradientOverlayView: UIView {
 		let midLocation: NSNumber = 0.6
 		let endLocation: NSNumber = 1.0
 
-		// layer
+		// gradient
 		let gradient = CAGradientLayer()
 		gradient.colors = [startColor.cgColor, midColor.cgColor, endColor.cgColor]
 		gradient.locations = [startLocation, midLocation, endLocation]
