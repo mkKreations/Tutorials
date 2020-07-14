@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
 																									 subitems: [item])
 		
 		let section = NSCollectionLayoutSection(group: group)
-		section.orthogonalScrollingBehavior = .continuous
+		section.orthogonalScrollingBehavior = .groupPaging
 		section.contentInsets = NSDirectionalEdgeInsets(top: 10.0,
 																										leading: 10.0,
 																										bottom: 10.0,
