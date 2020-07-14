@@ -31,6 +31,13 @@ class TutorialCell: UICollectionViewCell {
 			tutorialLabel.text = tutorialText
 		}
 	}
+	var tutorialBackgroundColor: String? {
+		didSet {
+			if let hexString = tutorialBackgroundColor {
+				contentView.backgroundColor = UIColor(hexString: hexString)
+			}
+		}
+	}
 	
 	
 	// MARK: inits

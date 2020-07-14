@@ -11,31 +11,27 @@ import UIKit
 extension UIColor {
 	// failable init since we're checking a string value
 	// as well as an array count
-	convenience init?(hex: String) {
-		let r, g, b, a: CGFloat
-		
-		if hex.hasPrefix("#") {
-			let start = hex.index(hex.startIndex, offsetBy: 1)
-			let hexColor = String(hex[start...])
-			
-			if hexColor.count == 8 {
-				let scanner = Scanner(string: hexColor)
-				var hexNumber: UInt64 = 0
-				
-				if scanner.scanHexInt64(&hexNumber) {
-					r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-					g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-					b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-					a = CGFloat(hexNumber & 0x000000ff) / 255
-					
-					// init using designated init once we obtained our values
-					self.init(red: r, green: g, blue: b, alpha: a)
-					return
-				}
-			}
-		}
-		
-		// if prefix isn't found or array count doesn't match
-		return nil
+	convenience init?(hexString: String) {
+    var chars = Array(hexString.hasPrefix("#") ? hexString.dropFirst() : hexString[...])
+    let red, green, blue, alpha: CGFloat
+
+    switch chars.count {
+    case 3:
+      chars = chars.flatMap { [$0, $0] }
+      fallthrough
+    case 6:
+      chars = ["F","F"] + chars
+      fallthrough
+    case 8:
+      alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
+      red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
+      green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
+      blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
+    default:
+			// if prefix isn't found or array count doesn't match
+			return nil
+    }
+		// init using designated init once we obtained our values
+    self.init(red: red, green: green, blue:  blue, alpha: alpha)
 	}
 }
