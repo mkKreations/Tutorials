@@ -29,7 +29,11 @@ class HomeViewController: UIViewController {
 		// passing in standard flow layout for now
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView.register(TutorialCell.self, forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
+		collectionView.register(TutorialCell.self,
+														forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
+		collectionView.register(TitleHeaderView.self,
+														forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+														withReuseIdentifier: TitleHeaderView.reuseIdentifier)
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
 		
@@ -69,6 +73,7 @@ class HomeViewController: UIViewController {
 		return UICollectionViewCompositionalLayout(section: section)
 	}
 	private func configureDatasource() {
+		// instantiating dataSource as well as configuring reusable cells
 		dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
 			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
 			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TutorialCell.reuseIdentifier,
@@ -79,6 +84,26 @@ class HomeViewController: UIViewController {
 			cell.tutorialText = tutorial.title
 			cell.tutorialBackgroundColor = tutorial.artworkColor
 			return cell
+		}
+		
+		// adding logic to dataSource for section headers
+		dataSource.supplementaryViewProvider = { [weak self]
+			collectionView, kind, indexPath in
+			// only expecting section headers
+			guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+			
+			// get our headerView of TitleHeaderView type
+			guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+																																			 withReuseIdentifier: TitleHeaderView.reuseIdentifier,
+																																			 for: indexPath) as? TitleHeaderView else { return nil }
+			
+			// get our current section using indexPath
+			guard let section = self?.dataSource.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
+			
+			// set values on headerView
+			headerView.displayText = section.title
+			
+			return headerView
 		}
 	}
 	private func applySnapshot() {
