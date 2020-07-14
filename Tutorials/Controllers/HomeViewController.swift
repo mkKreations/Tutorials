@@ -87,7 +87,10 @@ class HomeViewController: UIViewController {
 		}
 		
 		// adding logic to dataSource for section headers
-		dataSource.supplementaryViewProvider = { [weak self]
+		configureDatasourceSectionHeaders()
+	}
+	private func configureDatasourceSectionHeaders() {
+		dataSource.supplementaryViewProvider = { [weak self] // weak self to avoid retain cycles
 			collectionView, kind, indexPath in
 			// only expecting section headers
 			guard kind == UICollectionView.elementKindSectionHeader else { return nil }
