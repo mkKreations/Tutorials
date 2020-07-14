@@ -47,7 +47,6 @@ class GradientOverlayView: UIView {
 		if layer.sublayers == nil {
 			gradientLayer.frame = bounds // set frame on our layer
 			layer.addSublayer(gradientLayer) // add layer as subLayer
-			layer.cornerRadius = 10.0 // set corner radius
 		}
 	}
 }

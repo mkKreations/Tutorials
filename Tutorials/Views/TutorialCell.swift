@@ -44,6 +44,9 @@ class TutorialCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
+		contentView.layer.cornerRadius = 10.0
+		contentView.clipsToBounds = true
+		
 		instantiateTutorialViews()
 		layoutTutorialViews()
 	}
@@ -68,7 +71,7 @@ class TutorialCell: UICollectionViewCell {
 		tutorialLabel.translatesAutoresizingMaskIntoConstraints = false
 		tutorialLabel.font = .preferredFont(forTextStyle: .title3)
 		tutorialLabel.textColor = .white
-		tutorialLabel.numberOfLines = 1
+		tutorialLabel.numberOfLines = 2
 		contentView.addSubview(tutorialLabel)
 	}
 	private func layoutTutorialViews() {
