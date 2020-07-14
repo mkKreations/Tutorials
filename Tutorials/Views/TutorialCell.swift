@@ -11,6 +11,7 @@ import UIKit
 class TutorialCell: UICollectionViewCell {
 	// MARK: private vars
 	private var tutorialImageView: UIImageView!
+	private var gradientView: GradientOverlayView!
 	private var tutorialLabel: UILabel!
 	
 	
@@ -47,6 +48,10 @@ class TutorialCell: UICollectionViewCell {
 		tutorialImageView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.addSubview(tutorialImageView)
 		
+		gradientView = GradientOverlayView(frame: .zero)
+		gradientView.translatesAutoresizingMaskIntoConstraints = false
+		contentView.addSubview(gradientView)
+		
 		tutorialLabel = UILabel(frame: .zero)
 		tutorialLabel.translatesAutoresizingMaskIntoConstraints = false
 		tutorialLabel.font = .preferredFont(forTextStyle: .title3)
@@ -59,6 +64,11 @@ class TutorialCell: UICollectionViewCell {
 		tutorialImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
 		tutorialImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
 		tutorialImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+		
+		gradientView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+		gradientView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+		gradientView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+		gradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 		
 		tutorialLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
 		tutorialLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0).isActive = true
