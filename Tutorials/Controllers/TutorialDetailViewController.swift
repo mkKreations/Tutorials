@@ -14,6 +14,7 @@ class TutorialDetailViewController: UIViewController {
 		didSet {
 			tutorialImageView.image = UIImage(named: tutorial.thumbnail)
 			tutorialTitleLabel.text = tutorial.title
+//			tutorialPublishLabel.text = tutorial.publishDate
 		}
 	}
 	
@@ -22,6 +23,7 @@ class TutorialDetailViewController: UIViewController {
 	private let tutorialImageView = UIImageView(frame: .zero)
 	private let tutorialStackView = UIStackView(frame: .zero)
 	private let tutorialTitleLabel = UILabel(frame: .zero)
+	private let tutorialPublishLabel = UILabel(frame: .zero)
 	
 	
 	// MARK: view life cycle methods
@@ -54,6 +56,12 @@ class TutorialDetailViewController: UIViewController {
 		tutorialTitleLabel.textColor = .white
 		tutorialTitleLabel.numberOfLines = 2
 		tutorialStackView.addArrangedSubview(tutorialTitleLabel)
+		
+		tutorialPublishLabel.translatesAutoresizingMaskIntoConstraints = false
+		tutorialPublishLabel.font = .preferredFont(forTextStyle: .body)
+		tutorialPublishLabel.textColor = .systemGray
+		tutorialPublishLabel.numberOfLines = 1
+		tutorialStackView.addArrangedSubview(tutorialPublishLabel)
 		
 		view.addSubview(tutorialStackView)
 	}
