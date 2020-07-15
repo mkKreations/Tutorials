@@ -24,7 +24,7 @@ class TutorialDetailViewController: UIViewController {
 	private let topView = TutorialDetailTopView(frame: .zero)
 	// passing in default collectionViewLayout for instantiation
 	private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-	private var dataSource: UICollectionViewDiffableDataSource<Tutorial, Video>!
+	private var dataSource: UICollectionViewDiffableDataSource<Section, Video>!
 	
 	
 	// MARK: view life cycle methods
@@ -41,6 +41,7 @@ class TutorialDetailViewController: UIViewController {
 		configureTutorialSubviews()
 		layoutTutorialSubviews()
 		configureDatasource()
+		applySnapshot()
 	}
 	
 	
@@ -99,5 +100,14 @@ class TutorialDetailViewController: UIViewController {
 			cell.displayText = video.title
 			return cell
 		}
+	}
+	private func applySnapshot() {
+		var snapShot = NSDiffableDataSourceSnapshot<Section, Video>()
+		let sections = tutorial.content // get our Section collection from Tutorial
+		snapShot.appendSections(sections)
+		sections.forEach { section in
+			snapShot.appendItems(section.videos, toSection: section)
+		}
+		dataSource.apply(snapShot)
 	}
 }
