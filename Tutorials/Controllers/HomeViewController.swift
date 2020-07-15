@@ -18,6 +18,9 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		title = "Library"
+//		navigationController?.navigationBar.prefersLargeTitles = true
+		
 		configureCollectionView()
 		configureDatasource()
 		applySnapshot()

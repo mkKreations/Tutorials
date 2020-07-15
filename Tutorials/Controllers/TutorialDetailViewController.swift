@@ -29,6 +29,9 @@ class TutorialDetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		title = tutorial.title
+		navigationController?.navigationBar.prefersLargeTitles = false
+
 		view.backgroundColor = .black
 		
 		edgesForExtendedLayout = []
