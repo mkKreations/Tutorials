@@ -14,7 +14,7 @@ class TutorialDetailViewController: UIViewController {
 		didSet {
 			tutorialImageView.image = UIImage(named: tutorial.thumbnail)
 			tutorialTitleLabel.text = tutorial.title
-//			tutorialPublishLabel.text = tutorial.publishDate
+			tutorialPublishLabel.text = tutorial.publishDate.formattedPublishDateString
 		}
 	}
 	
