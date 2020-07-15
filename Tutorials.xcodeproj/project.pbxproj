@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */; };
+		2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735B24BF90DA00B86B67 /* VideoCell.swift */; };
 		2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91DE24BBDAA900077624 /* AppDelegate.swift */; };
 		2C2C91E624BBDAA900077624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E424BBDAA900077624 /* Main.storyboard */; };
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailTopView.swift; sourceTree = "<group>"; };
+		2C11735B24BF90DA00B86B67 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		2C2C91DB24BBDAA900077624 /* Tutorials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2C91DE24BBDAA900077624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C2C91E524BBDAA900077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */,
 				2C45405F24BE475D00883AC0 /* TitleHeaderView.swift */,
 				2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */,
+				2C11735B24BF90DA00B86B67 /* VideoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				2CE2643124BD0C4D00109C11 /* Video.swift in Sources */,
 				2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
+				2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */,
 				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
 				2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
