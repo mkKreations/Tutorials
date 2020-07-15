@@ -13,6 +13,7 @@ class TutorialDetailViewController: UIViewController {
 	var tutorial: Tutorial! {
 		didSet {
 			tutorialImageView.image = UIImage(named: tutorial.thumbnail)
+			tutorialTitleLabel.text = tutorial.title
 		}
 	}
 	
@@ -20,6 +21,7 @@ class TutorialDetailViewController: UIViewController {
 	// MARK: subview properties
 	private let tutorialImageView = UIImageView(frame: .zero)
 	private let tutorialStackView = UIStackView(frame: .zero)
+	private let tutorialTitleLabel = UILabel(frame: .zero)
 	
 	
 	// MARK: view life cycle methods
@@ -41,10 +43,19 @@ class TutorialDetailViewController: UIViewController {
 		tutorialImageView.contentMode = .scaleAspectFit
 		view.addSubview(tutorialImageView)
 		
+		tutorialStackView.translatesAutoresizingMaskIntoConstraints = false
 		tutorialStackView.axis = .vertical
 		tutorialStackView.alignment = .leading
 		tutorialStackView.distribution = .fill
 		tutorialStackView.spacing = 8.0
+		
+		tutorialTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+		tutorialTitleLabel.font = .preferredFont(forTextStyle: .title1)
+		tutorialTitleLabel.textColor = .white
+		tutorialTitleLabel.numberOfLines = 2
+		tutorialStackView.addArrangedSubview(tutorialTitleLabel)
+		
+		view.addSubview(tutorialStackView)
 	}
 	private func layoutTutorialSubviews() {
 		tutorialImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -52,9 +63,8 @@ class TutorialDetailViewController: UIViewController {
 		tutorialImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 		tutorialImageView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
 		
-//		tutorialStackView.topAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
-////		tutorialStackView.bottomAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
-//		tutorialStackView.leadingAnchor.constraint(equalTo: tutorialImageView.leadingAnchor, constant: 16.0).isActive = true
-//		tutorialStackView.trailingAnchor.constraint(equalTo: tutorialImageView.trailingAnchor, constant: 16.0).isActive = true
+		tutorialStackView.topAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
+		tutorialStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0).isActive = true
+		tutorialStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
 	}
 }
