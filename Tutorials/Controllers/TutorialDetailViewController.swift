@@ -92,10 +92,14 @@ class TutorialDetailViewController: UIViewController {
 																								 subitems: [item])
 		
 		let section = NSCollectionLayoutSection(group: group)
-		
+		section.contentInsets = NSDirectionalEdgeInsets(top: 10.0,
+																										leading: 10.0,
+																										bottom: 20.0,
+																										trailing: 10.0)
+
 		// header logic
 		let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-																						heightDimension: .absolute(44.0))
+																						heightDimension: .estimated(44.0))
 		let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
 																																		elementKind: UICollectionView.elementKindSectionHeader,
 																																		alignment: .topLeading)
