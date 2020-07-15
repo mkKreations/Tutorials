@@ -62,6 +62,9 @@ class TutorialDetailViewController: UIViewController {
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.backgroundColor = .black
 		collectionView.register(VideoCell.self, forCellWithReuseIdentifier: VideoCell.reuseIdentifier)
+		collectionView.register(TitleHeaderView.self,
+														forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+														withReuseIdentifier: TitleHeaderView.reuseIdentifier)
 		collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
 		view.addSubview(collectionView)
 	}
@@ -99,6 +102,29 @@ class TutorialDetailViewController: UIViewController {
 																													for: indexPath) as? VideoCell else { return nil }
 			cell.displayText = video.title
 			return cell
+		}
+		
+		// adding logic to dataSource for section headers
+		configureDatasourceSectionHeaders()
+	}
+	private func configureDatasourceSectionHeaders() {
+		dataSource.supplementaryViewProvider = { [weak self] // weak self to avoid retain cycles
+			collectionView, kind, indexPath in
+			// only expecting section headers
+			guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+			
+			// get our headerView of TitleHeaderView type
+			guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+																																						 withReuseIdentifier: TitleHeaderView.reuseIdentifier,
+																																						 for: indexPath) as? TitleHeaderView else { return nil }
+			
+			// get our current section using indexPath
+			guard let section = self?.dataSource.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
+			
+			// set values on headerView
+			headerView.displayText = section.title
+			
+			return headerView
 		}
 	}
 	private func applySnapshot() {
