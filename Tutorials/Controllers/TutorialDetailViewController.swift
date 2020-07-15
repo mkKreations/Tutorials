@@ -15,6 +15,7 @@ class TutorialDetailViewController: UIViewController {
 			topView.tutorialImageView.image = UIImage(named: tutorial.thumbnail)
 			topView.tutorialTitleLabel.text = tutorial.title
 			topView.tutorialPublishLabel.text = tutorial.publishDate.formattedPublishDateString
+			topView.tutorialBackgroundView.backgroundColor = UIColor(hexString: tutorial.artworkColor)
 		}
 	}
 	

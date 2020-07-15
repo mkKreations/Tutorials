@@ -10,6 +10,7 @@ import UIKit
 
 class TutorialDetailTopView: UIView {
 	// MARK: subview properties
+	let tutorialBackgroundView = UIView(frame: .zero)
 	let tutorialImageView = UIImageView(frame: .zero)
 	private let tutorialStackView = UIStackView(frame: .zero)
 	let tutorialTitleLabel = UILabel(frame: .zero)
@@ -31,6 +32,9 @@ class TutorialDetailTopView: UIView {
 	
 	// MARK: subview config
 	private func configureTutorialSubviews() {
+		tutorialBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+		addSubview(tutorialBackgroundView)
+		
 		tutorialImageView.translatesAutoresizingMaskIntoConstraints = false
 		tutorialImageView.contentMode = .scaleAspectFit
 		addSubview(tutorialImageView)
@@ -63,6 +67,11 @@ class TutorialDetailTopView: UIView {
 		addSubview(tutorialStackView)
 	}
 	private func layoutTutorialSubviews() {
+		tutorialBackgroundView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+		tutorialBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+		tutorialBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+		tutorialBackgroundView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+
 		tutorialImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
 		tutorialImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
 		tutorialImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
