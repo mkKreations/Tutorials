@@ -93,6 +93,14 @@ class TutorialDetailViewController: UIViewController {
 		
 		let section = NSCollectionLayoutSection(group: group)
 		
+		// header logic
+		let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																						heightDimension: .absolute(44.0))
+		let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+																																		elementKind: UICollectionView.elementKindSectionHeader,
+																																		alignment: .topLeading)
+		section.boundarySupplementaryItems = [sectionHeader]
+		
 		return UICollectionViewCompositionalLayout(section: section)
 	}
 	private func configureDatasource() {
