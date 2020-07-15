@@ -25,6 +25,8 @@ class TutorialDetailViewController: UIViewController {
 	private let tutorialTitleLabel = UILabel(frame: .zero)
 	private let tutorialPublishLabel = UILabel(frame: .zero)
 	private let tutorialQueueButton = UIButton(frame: .zero)
+	// passing in default collectionViewLayout for instantiation
+	private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 	
 	
 	// MARK: view life cycle methods
@@ -79,6 +81,10 @@ class TutorialDetailViewController: UIViewController {
 		tutorialStackView.addArrangedSubview(tutorialQueueButton)
 
 		view.addSubview(tutorialStackView)
+		
+		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.backgroundColor = .systemIndigo
+		view.addSubview(collectionView)
 	}
 	private func layoutTutorialSubviews() {
 		tutorialImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -89,5 +95,10 @@ class TutorialDetailViewController: UIViewController {
 		tutorialStackView.topAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
 		tutorialStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0).isActive = true
 		tutorialStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
+		
+		collectionView.topAnchor.constraint(equalTo: tutorialStackView.bottomAnchor, constant: 16.0).isActive = true
+		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
+		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
+		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 6.0).isActive = true
 	}
 }
