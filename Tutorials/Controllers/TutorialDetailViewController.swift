@@ -24,6 +24,7 @@ class TutorialDetailViewController: UIViewController {
 	private let topView = TutorialDetailTopView(frame: .zero)
 	// passing in default collectionViewLayout for instantiation
 	private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+	private var dataSource: UICollectionViewDiffableDataSource<Tutorial, Video>!
 	
 	
 	// MARK: view life cycle methods
@@ -39,6 +40,7 @@ class TutorialDetailViewController: UIViewController {
 		
 		configureTutorialSubviews()
 		layoutTutorialSubviews()
+		configureDatasource()
 	}
 	
 	
@@ -88,5 +90,14 @@ class TutorialDetailViewController: UIViewController {
 		let section = NSCollectionLayoutSection(group: group)
 		
 		return UICollectionViewCompositionalLayout(section: section)
+	}
+	private func configureDatasource() {
+		dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {
+			(collectionView, indexPath, video) -> UICollectionViewCell? in
+			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCell.reuseIdentifier,
+																													for: indexPath) as? VideoCell else { return nil }
+			cell.displayText = video.title
+			return cell
+		}
 	}
 }
