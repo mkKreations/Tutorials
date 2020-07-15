@@ -19,6 +19,7 @@ class TutorialDetailViewController: UIViewController {
 	
 	// MARK: subview properties
 	private let tutorialImageView = UIImageView(frame: .zero)
+	private let tutorialStackView = UIStackView(frame: .zero)
 	
 	
 	// MARK: view life cycle methods
@@ -39,11 +40,21 @@ class TutorialDetailViewController: UIViewController {
 		tutorialImageView.translatesAutoresizingMaskIntoConstraints = false
 		tutorialImageView.contentMode = .scaleAspectFit
 		view.addSubview(tutorialImageView)
+		
+		tutorialStackView.axis = .vertical
+		tutorialStackView.alignment = .leading
+		tutorialStackView.distribution = .fill
+		tutorialStackView.spacing = 8.0
 	}
 	private func layoutTutorialSubviews() {
 		tutorialImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
 		tutorialImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 		tutorialImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 		tutorialImageView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+		
+//		tutorialStackView.topAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
+////		tutorialStackView.bottomAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
+//		tutorialStackView.leadingAnchor.constraint(equalTo: tutorialImageView.leadingAnchor, constant: 16.0).isActive = true
+//		tutorialStackView.trailingAnchor.constraint(equalTo: tutorialImageView.trailingAnchor, constant: 16.0).isActive = true
 	}
 }
