@@ -57,7 +57,9 @@ class TutorialDetailViewController: UIViewController {
 		topView.tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView.backgroundColor = .systemIndigo
+		collectionView.backgroundColor = .black
+		collectionView.register(VideoCell.self, forCellWithReuseIdentifier: VideoCell.reuseIdentifier)
+		collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
 		view.addSubview(collectionView)
 	}
 	private func layoutTutorialSubviews() {
@@ -69,5 +71,22 @@ class TutorialDetailViewController: UIViewController {
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 6.0).isActive = true
+	}
+	
+	
+	// MARK: collectionView config
+	private func configureCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+		let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																					heightDimension: .fractionalHeight(1.0))
+		let item = NSCollectionLayoutItem(layoutSize: itemSize)
+		
+		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																					 heightDimension: .absolute(44.0))
+		let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+																								 subitems: [item])
+		
+		let section = NSCollectionLayoutSection(group: group)
+		
+		return UICollectionViewCompositionalLayout(section: section)
 	}
 }
