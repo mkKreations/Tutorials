@@ -14,12 +14,12 @@ class GradientOverlayView: UIView {
 		// colors
 		let startColor = UIColor(white: 1.0, alpha: 0.0)
 		let midColor = UIColor(white: 0.0, alpha: 0.4)
-		let endColor = UIColor(white: 0.0, alpha: 0.8)
+		let endColor = UIColor(white: 0.0, alpha: 1.0)
 		
 		// locations
 		let startLocation: NSNumber = 0.0
 		let midLocation: NSNumber = 0.6
-		let endLocation: NSNumber = 1.0
+		let endLocation: NSNumber = 0.8
 
 		// gradient
 		let gradient = CAGradientLayer()

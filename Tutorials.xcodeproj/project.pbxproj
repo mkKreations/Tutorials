@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */; };
+		2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735B24BF90DA00B86B67 /* VideoCell.swift */; };
 		2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91DE24BBDAA900077624 /* AppDelegate.swift */; };
 		2C2C91E624BBDAA900077624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E424BBDAA900077624 /* Main.storyboard */; };
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 		2C73E35F24BD454E009755CF /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E35E24BD454E009755CF /* TutorialCell.swift */; };
 		2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */; };
 		2C80818724BD859400EBC9AD /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C80818624BD859400EBC9AD /* UIColor+extensions.swift */; };
+		2C94B49424BEB20700EB9665 /* TutorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C94B49324BEB20700EB9665 /* TutorialDetailViewController.swift */; };
+		2C94B49624BEC3FF00EB9665 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C94B49524BEC3FF00EB9665 /* Date+extensions.swift */; };
 		2CE2642924BD092B00109C11 /* Tutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE2642824BD092B00109C11 /* Tutorials.plist */; };
 		2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642A24BD0ABD00109C11 /* Topic.swift */; };
 		2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2642C24BD0B2C00109C11 /* Tutorial.swift */; };
@@ -25,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailTopView.swift; sourceTree = "<group>"; };
+		2C11735B24BF90DA00B86B67 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		2C2C91DB24BBDAA900077624 /* Tutorials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2C91DE24BBDAA900077624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C2C91E524BBDAA900077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		2C73E35E24BD454E009755CF /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
 		2C80818624BD859400EBC9AD /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		2C94B49324BEB20700EB9665 /* TutorialDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailViewController.swift; sourceTree = "<group>"; };
+		2C94B49524BEC3FF00EB9665 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		2CE2642824BD092B00109C11 /* Tutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorials.plist; sourceTree = "<group>"; };
 		2CE2642A24BD0ABD00109C11 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		2CE2642C24BD0B2C00109C11 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2C2C91F324BBDB9E00077624 /* HomeViewController.swift */,
+				2C94B49324BEB20700EB9665 /* TutorialDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +110,8 @@
 				2C73E35E24BD454E009755CF /* TutorialCell.swift */,
 				2C73E36024BD4DE4009755CF /* GradientOverlayView.swift */,
 				2C45405F24BE475D00883AC0 /* TitleHeaderView.swift */,
+				2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */,
+				2C11735B24BF90DA00B86B67 /* VideoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2C80818624BD859400EBC9AD /* UIColor+extensions.swift */,
+				2C94B49524BEC3FF00EB9665 /* Date+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,14 +213,18 @@
 				2CE2642F24BD0BDF00109C11 /* Section.swift in Sources */,
 				2C73E35F24BD454E009755CF /* TutorialCell.swift in Sources */,
 				2CE2643124BD0C4D00109C11 /* Video.swift in Sources */,
+				2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */,
 				2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */,
+				2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */,
 				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
 				2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
 				2C45406024BE475D00883AC0 /* TitleHeaderView.swift in Sources */,
+				2C94B49624BEC3FF00EB9665 /* Date+extensions.swift in Sources */,
 				2C80818724BD859400EBC9AD /* UIColor+extensions.swift in Sources */,
 				2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */,
 				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
+				2C94B49424BEB20700EB9665 /* TutorialDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

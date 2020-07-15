@@ -18,6 +18,9 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		title = "Library"
+//		navigationController?.navigationBar.prefersLargeTitles = true
+		
 		configureCollectionView()
 		configureDatasource()
 		applySnapshot()
@@ -29,6 +32,7 @@ class HomeViewController: UIViewController {
 		// passing in standard flow layout for now
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		collectionView.delegate = self
 		collectionView.register(TutorialCell.self,
 														forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
 		collectionView.register(TitleHeaderView.self,
@@ -123,5 +127,15 @@ class HomeViewController: UIViewController {
 			snapShot.appendItems(topic.tutorials, toSection: topic)
 		}
 		dataSource.apply(snapShot)
+	}
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		// get selectedTutorial
+		guard let selectedTutorial = dataSource.itemIdentifier(for: indexPath) else { return }
+		let detailVC = TutorialDetailViewController()
+		detailVC.tutorial = selectedTutorial
+		navigationController?.pushViewController(detailVC, animated: true)
 	}
 }

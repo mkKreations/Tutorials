@@ -35,6 +35,7 @@ class TitleHeaderView: UICollectionReusableView {
 	// private config methods
 	private func configureTitleLabel() {
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.numberOfLines = 2
 		titleLabel.font = .preferredFont(forTextStyle: .title2)
 		addSubview(titleLabel)
 		
