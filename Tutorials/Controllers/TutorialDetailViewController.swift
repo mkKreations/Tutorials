@@ -9,6 +9,8 @@
 import UIKit
 
 class TutorialDetailViewController: UIViewController {
+	var tutorial: Tutorial! // we know we'll have a Tutorial
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .systemOrange
