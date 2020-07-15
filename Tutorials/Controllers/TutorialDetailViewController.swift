@@ -24,6 +24,7 @@ class TutorialDetailViewController: UIViewController {
 	private let tutorialStackView = UIStackView(frame: .zero)
 	private let tutorialTitleLabel = UILabel(frame: .zero)
 	private let tutorialPublishLabel = UILabel(frame: .zero)
+	private let tutorialQueueButton = UIButton(frame: .zero)
 	
 	
 	// MARK: view life cycle methods
@@ -36,6 +37,12 @@ class TutorialDetailViewController: UIViewController {
 		
 		configureTutorialSubviews()
 		layoutTutorialSubviews()
+	}
+	
+	
+	// MARK: actions
+	@objc private func queueButtonPressed(_ sender: UIButton) {
+		print("queue button pressed!")
 	}
 	
 	
@@ -63,6 +70,14 @@ class TutorialDetailViewController: UIViewController {
 		tutorialPublishLabel.numberOfLines = 1
 		tutorialStackView.addArrangedSubview(tutorialPublishLabel)
 		
+		tutorialQueueButton.translatesAutoresizingMaskIntoConstraints = false
+		tutorialQueueButton.setTitle("Add to Queue", for: .normal)
+		tutorialQueueButton.setTitleColor(.link, for: .normal)
+		tutorialQueueButton.setTitleColor(.white, for: .highlighted)
+		tutorialQueueButton.titleLabel?.font = .systemFont(ofSize: 15.0)
+		tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
+		tutorialStackView.addArrangedSubview(tutorialQueueButton)
+
 		view.addSubview(tutorialStackView)
 	}
 	private func layoutTutorialSubviews() {
