@@ -12,19 +12,15 @@ class TutorialDetailViewController: UIViewController {
 	// MARK: dependencies
 	var tutorial: Tutorial! {
 		didSet {
-			tutorialImageView.image = UIImage(named: tutorial.thumbnail)
-			tutorialTitleLabel.text = tutorial.title
-			tutorialPublishLabel.text = tutorial.publishDate.formattedPublishDateString
+			topView.tutorialImageView.image = UIImage(named: tutorial.thumbnail)
+			topView.tutorialTitleLabel.text = tutorial.title
+			topView.tutorialPublishLabel.text = tutorial.publishDate.formattedPublishDateString
 		}
 	}
 	
 	
 	// MARK: subview properties
-	private let tutorialImageView = UIImageView(frame: .zero)
-	private let tutorialStackView = UIStackView(frame: .zero)
-	private let tutorialTitleLabel = UILabel(frame: .zero)
-	private let tutorialPublishLabel = UILabel(frame: .zero)
-	private let tutorialQueueButton = UIButton(frame: .zero)
+	private let topView = TutorialDetailTopView(frame: .zero)
 	// passing in default collectionViewLayout for instantiation
 	private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 	
@@ -50,53 +46,22 @@ class TutorialDetailViewController: UIViewController {
 	
 	// MARK: view configuration
 	private func configureTutorialSubviews() {
-		tutorialImageView.translatesAutoresizingMaskIntoConstraints = false
-		tutorialImageView.contentMode = .scaleAspectFit
-		view.addSubview(tutorialImageView)
+		topView.translatesAutoresizingMaskIntoConstraints = false
+		view.addSubview(topView)
 		
-		tutorialStackView.translatesAutoresizingMaskIntoConstraints = false
-		tutorialStackView.axis = .vertical
-		tutorialStackView.alignment = .leading
-		tutorialStackView.distribution = .fill
-		tutorialStackView.spacing = 8.0
-		
-		tutorialTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-		tutorialTitleLabel.font = .preferredFont(forTextStyle: .title1)
-		tutorialTitleLabel.textColor = .white
-		tutorialTitleLabel.numberOfLines = 2
-		tutorialStackView.addArrangedSubview(tutorialTitleLabel)
-		
-		tutorialPublishLabel.translatesAutoresizingMaskIntoConstraints = false
-		tutorialPublishLabel.font = .preferredFont(forTextStyle: .body)
-		tutorialPublishLabel.textColor = .systemGray
-		tutorialPublishLabel.numberOfLines = 1
-		tutorialStackView.addArrangedSubview(tutorialPublishLabel)
-		
-		tutorialQueueButton.translatesAutoresizingMaskIntoConstraints = false
-		tutorialQueueButton.setTitle("Add to Queue", for: .normal)
-		tutorialQueueButton.setTitleColor(.link, for: .normal)
-		tutorialQueueButton.setTitleColor(.white, for: .highlighted)
-		tutorialQueueButton.titleLabel?.font = .systemFont(ofSize: 15.0)
-		tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
-		tutorialStackView.addArrangedSubview(tutorialQueueButton)
-
-		view.addSubview(tutorialStackView)
+		// become target for queue button
+		topView.tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.backgroundColor = .systemIndigo
 		view.addSubview(collectionView)
 	}
 	private func layoutTutorialSubviews() {
-		tutorialImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		tutorialImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		tutorialImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		tutorialImageView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
-		
-		tutorialStackView.topAnchor.constraint(equalTo: tutorialImageView.bottomAnchor, constant: 16.0).isActive = true
-		tutorialStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0).isActive = true
-		tutorialStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
-		
-		collectionView.topAnchor.constraint(equalTo: tutorialStackView.bottomAnchor, constant: 16.0).isActive = true
+		topView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+		topView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+		topView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+		collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 6.0).isActive = true
