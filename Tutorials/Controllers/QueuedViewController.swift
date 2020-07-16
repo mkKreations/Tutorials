@@ -12,6 +12,7 @@ class QueuedViewController: UIViewController {
 	// MARK: stored properties
 	private var collectionView: UICollectionView!
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
+	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
 								 image: UIImage(systemName: "bookmark"),
@@ -30,6 +31,7 @@ class QueuedViewController: UIViewController {
 		super.viewDidLoad()
 		
 		configureCollectionView()
+		configureDatasource()
 	}
 	
 	
@@ -38,7 +40,7 @@ class QueuedViewController: UIViewController {
 		collectionView = UICollectionView(frame: .zero,
 																			collectionViewLayout: configureCollectionViewLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView.backgroundColor = .systemPink
+		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
 		view.addSubview(collectionView)
 		
 		layoutCollectionView()
@@ -73,7 +75,10 @@ class QueuedViewController: UIViewController {
 	private func configureDatasource() {
 		dataSource = UICollectionViewDiffableDataSource<QueuedSection, Tutorial>(collectionView: collectionView) {
 			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
-				return nil
+			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QueuedCell.reuseIdentifier,
+																													for: indexPath) as? QueuedCell else { return nil }
+			cell.tutorial = tutorial
+			return cell
 		}
 	}
 }
