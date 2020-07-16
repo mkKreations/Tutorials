@@ -47,7 +47,18 @@ class TutorialDetailViewController: UIViewController {
 	
 	// MARK: actions
 	@objc private func queueButtonPressed(_ sender: UIButton) {
-		print("queue button pressed!")
+		// update model
+		tutorial.isQueued.toggle()
+		
+		// determine buttonTitle for model state
+		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"
+		
+		// animate button title change with withoutAnimation closure
+		// with a system button this animation works well
+		UIView.performWithoutAnimation {
+			topView.tutorialQueueButton.setTitle(buttonTitle, for: .normal)
+			topView.tutorialQueueButton.layoutIfNeeded()
+		}
 	}
 	
 	

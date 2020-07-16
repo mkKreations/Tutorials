@@ -18,7 +18,7 @@ final class Tutorial {
 	let thumbnail: String
 	let artworkColor: String
 	let publishDate: Date
-	let isQueued: Bool
+	var isQueued: Bool
 	let content: [Section]
 	let updateCount: Int
 	

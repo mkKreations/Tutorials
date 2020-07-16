@@ -15,7 +15,7 @@ class TutorialDetailTopView: UIView {
 	private let tutorialStackView = UIStackView(frame: .zero)
 	let tutorialTitleLabel = UILabel(frame: .zero)
 	let tutorialPublishLabel = UILabel(frame: .zero)
-	let tutorialQueueButton = UIButton(frame: .zero)
+	let tutorialQueueButton = UIButton(type: .system)
 
 	
 	// MARK: inits
