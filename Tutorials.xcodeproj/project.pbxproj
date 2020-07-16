@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */; };
 		2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735B24BF90DA00B86B67 /* VideoCell.swift */; };
+		2C20C02524BFEF1A00DFCCE5 /* QueuedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C02424BFEF1A00DFCCE5 /* QueuedViewController.swift */; };
 		2C2C91DF24BBDAA900077624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C91DE24BBDAA900077624 /* AppDelegate.swift */; };
 		2C2C91E624BBDAA900077624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E424BBDAA900077624 /* Main.storyboard */; };
 		2C2C91E824BBDAAC00077624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C91E724BBDAAC00077624 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailTopView.swift; sourceTree = "<group>"; };
 		2C11735B24BF90DA00B86B67 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		2C20C02424BFEF1A00DFCCE5 /* QueuedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedViewController.swift; sourceTree = "<group>"; };
 		2C2C91DB24BBDAA900077624 /* Tutorials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2C91DE24BBDAA900077624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C2C91E524BBDAA900077624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				2C2C91F324BBDB9E00077624 /* HomeViewController.swift */,
 				2C94B49324BEB20700EB9665 /* TutorialDetailViewController.swift */,
+				2C20C02424BFEF1A00DFCCE5 /* QueuedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				2C94B49624BEC3FF00EB9665 /* Date+extensions.swift in Sources */,
 				2C80818724BD859400EBC9AD /* UIColor+extensions.swift in Sources */,
 				2CE2642B24BD0ABD00109C11 /* Topic.swift in Sources */,
+				2C20C02524BFEF1A00DFCCE5 /* QueuedViewController.swift in Sources */,
 				2C2C91F424BBDB9E00077624 /* HomeViewController.swift in Sources */,
 				2C94B49424BEB20700EB9665 /* TutorialDetailViewController.swift in Sources */,
 			);
