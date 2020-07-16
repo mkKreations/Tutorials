@@ -21,7 +21,6 @@ class QueuedViewController: UIViewController {
 	// MARK: view life cycle methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = UIColor.red
 		
 		configureCollectionView()
 	}
@@ -30,7 +29,7 @@ class QueuedViewController: UIViewController {
 	// MARK: collectionView config
 	private func configureCollectionView() {
 		collectionView = UICollectionView(frame: .zero,
-																			collectionViewLayout: UICollectionViewFlowLayout())
+																			collectionViewLayout: configureCollectionViewLayout())
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.backgroundColor = .systemPink
 		view.addSubview(collectionView)
@@ -42,5 +41,26 @@ class QueuedViewController: UIViewController {
 		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+	}
+	
+	
+	// MARK: collectionView dependencies config
+	private func configureCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+		let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																					heightDimension: .fractionalHeight(1.0))
+		let item = NSCollectionLayoutItem(layoutSize: itemSize)
+		item.contentInsets = NSDirectionalEdgeInsets(top: 10.0,
+																								 leading: 10.0,
+																								 bottom: 10.0,
+																								 trailing: 10.0)
+
+		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+																					 heightDimension: .absolute(148.0))
+		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+																									 subitems: [item])
+		
+		let section = NSCollectionLayoutSection(group: group)
+		
+		return UICollectionViewCompositionalLayout(section: section)
 	}
 }
