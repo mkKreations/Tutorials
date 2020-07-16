@@ -9,9 +9,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+	// MARK: private stored properties
 	private var collectionView: UICollectionView!
 	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
 	private let controller = TutorialsController.shared
+	private lazy var homeTabBarItem: UITabBarItem = {
+		UITabBarItem(title: title,
+								 image: UIImage(systemName: "book"),
+								 selectedImage: UIImage(systemName: "book.fill"))
+	}()
 	
 	
 	// MARK: view life cycle methods
@@ -19,6 +25,7 @@ class HomeViewController: UIViewController {
 		super.viewDidLoad()
 		
 		title = "Library"
+		tabBarItem = homeTabBarItem
 //		navigationController?.navigationBar.prefersLargeTitles = true
 		
 		configureCollectionView()
