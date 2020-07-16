@@ -18,6 +18,12 @@ class QueuedViewController: UIViewController {
 	}()
 	
 	
+	// MARK: nested enum to represent collectionView sections
+	enum QueuedSection {
+		case main
+	}
+	
+	
 	// MARK: view life cycle methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
