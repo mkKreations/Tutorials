@@ -11,6 +11,7 @@ import UIKit
 class QueuedViewController: UIViewController {
 	// MARK: stored properties
 	private var collectionView: UICollectionView!
+	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
 	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
 								 image: UIImage(systemName: "bookmark"),
@@ -68,5 +69,11 @@ class QueuedViewController: UIViewController {
 		let section = NSCollectionLayoutSection(group: group)
 		
 		return UICollectionViewCompositionalLayout(section: section)
+	}
+	private func configureDatasource() {
+		dataSource = UICollectionViewDiffableDataSource<QueuedSection, Tutorial>(collectionView: collectionView) {
+			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+				return nil
+		}
 	}
 }
