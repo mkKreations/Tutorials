@@ -9,16 +9,18 @@
 import UIKit
 
 class QueuedViewController: UIViewController {
-	private lazy var queuedTabBarItem: UITabBarItem = {
+	// MARK: stored properties
+	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
 								 image: UIImage(systemName: "bookmark"),
 								 selectedImage: UIImage(systemName: "bookmark.fill"))
 	}()
+	
+	
+	// MARK: view life cycle methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		view.backgroundColor = UIColor.red
-		
 		tabBarItem = queuedTabBarItem
 	}
 }

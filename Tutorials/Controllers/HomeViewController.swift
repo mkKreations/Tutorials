@@ -9,11 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-	// MARK: private stored properties
+	// MARK: stored properties
 	private var collectionView: UICollectionView!
 	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
 	private let controller = TutorialsController.shared
-	private lazy var homeTabBarItem: UITabBarItem = {
+	lazy var homeTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
 								 image: UIImage(systemName: "book"),
 								 selectedImage: UIImage(systemName: "book.fill"))
@@ -23,10 +23,6 @@ class HomeViewController: UIViewController {
 	// MARK: view life cycle methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		title = "Library"
-		tabBarItem = homeTabBarItem
-//		navigationController?.navigationBar.prefersLargeTitles = true
 		
 		configureCollectionView()
 		configureDatasource()
