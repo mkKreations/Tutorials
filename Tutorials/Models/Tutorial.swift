@@ -8,16 +8,51 @@
 
 import Foundation
 
-struct Tutorial: Hashable {
+// since we will be passing instances of this object
+// between different views - we'll represent this type
+// as a class
+
+final class Tutorial {
 	let id = UUID() // Hashable conformance
 	let title: String
 	let thumbnail: String
 	let artworkColor: String
 	let publishDate: Date
-	let isQueued: Bool
+	var isQueued: Bool
 	let content: [Section]
 	let updateCount: Int
+	
+	init(
+		title: String,
+		thumbnail: String,
+		artworkColor: String,
+		publishDate: Date,
+		isQueued: Bool,
+		content: [Section],
+		updateCount: Int
+	) {
+		self.title = title
+		self.thumbnail = thumbnail
+		self.artworkColor = artworkColor
+		self.publishDate = publishDate
+		self.isQueued = isQueued
+		self.content = content
+		self.updateCount = updateCount
+	}
 }
 
+
+// Hashable & Equatable conformance
+// Hashable inherits from Equatable
+extension Tutorial: Hashable {
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+	static func == (lhs: Tutorial, rhs: Tutorial) -> Bool {
+		lhs.id == rhs.id
+	}
+}
+
+// Decodable conformance
 // so we can decode data from plist
 extension Tutorial: Decodable {}

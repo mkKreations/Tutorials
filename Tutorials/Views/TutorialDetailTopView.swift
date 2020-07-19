@@ -15,7 +15,7 @@ class TutorialDetailTopView: UIView {
 	private let tutorialStackView = UIStackView(frame: .zero)
 	let tutorialTitleLabel = UILabel(frame: .zero)
 	let tutorialPublishLabel = UILabel(frame: .zero)
-	let tutorialQueueButton = UIButton(frame: .zero)
+	let tutorialQueueButton = UIButton(type: .system)
 
 	
 	// MARK: inits
@@ -58,7 +58,6 @@ class TutorialDetailTopView: UIView {
 		tutorialStackView.addArrangedSubview(tutorialPublishLabel)
 		
 		tutorialQueueButton.translatesAutoresizingMaskIntoConstraints = false
-		tutorialQueueButton.setTitle("Add to Queue", for: .normal)
 		tutorialQueueButton.setTitleColor(.link, for: .normal)
 		tutorialQueueButton.setTitleColor(.white, for: .highlighted)
 		tutorialQueueButton.titleLabel?.font = .systemFont(ofSize: 15.0)

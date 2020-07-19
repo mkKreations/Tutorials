@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol QueuedTutorialDelegate: AnyObject {
+	func queuedButtonPressed(forTutorial tutorial: Tutorial)
+}
+
 class TutorialDetailViewController: UIViewController {
 	// MARK: dependencies
 	var tutorial: Tutorial! {
@@ -18,6 +22,7 @@ class TutorialDetailViewController: UIViewController {
 			topView.tutorialBackgroundView.backgroundColor = UIColor(hexString: tutorial.artworkColor)
 		}
 	}
+	var delegate: QueuedTutorialDelegate?
 	
 	
 	// MARK: subview properties
@@ -47,7 +52,21 @@ class TutorialDetailViewController: UIViewController {
 	
 	// MARK: actions
 	@objc private func queueButtonPressed(_ sender: UIButton) {
-		print("queue button pressed!")
+		// update model
+		tutorial.isQueued.toggle()
+		
+		// pass selected/deselected tutorial onto delegate
+		delegate?.queuedButtonPressed(forTutorial: tutorial)
+		
+		// determine buttonTitle for model state
+		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"
+		
+		// animate button title change with withoutAnimation closure
+		// with a system button this animation works well
+		UIView.performWithoutAnimation {
+			topView.tutorialQueueButton.setTitle(buttonTitle, for: .normal)
+			topView.tutorialQueueButton.layoutIfNeeded()
+		}
 	}
 	
 	
@@ -56,7 +75,9 @@ class TutorialDetailViewController: UIViewController {
 		topView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(topView)
 		
-		// become target for queue button
+		// become target for queue button & set title
+		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"
+		topView.tutorialQueueButton.setTitle(buttonTitle, for: .normal)
 		topView.tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +97,7 @@ class TutorialDetailViewController: UIViewController {
 		collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
-		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 6.0).isActive = true
+		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -6.0).isActive = true
 	}
 	
 	
