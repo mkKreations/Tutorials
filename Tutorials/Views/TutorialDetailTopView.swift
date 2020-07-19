@@ -58,7 +58,6 @@ class TutorialDetailTopView: UIView {
 		tutorialStackView.addArrangedSubview(tutorialPublishLabel)
 		
 		tutorialQueueButton.translatesAutoresizingMaskIntoConstraints = false
-		tutorialQueueButton.setTitle("Add to Queue", for: .normal)
 		tutorialQueueButton.setTitleColor(.link, for: .normal)
 		tutorialQueueButton.setTitleColor(.white, for: .highlighted)
 		tutorialQueueButton.titleLabel?.font = .systemFont(ofSize: 15.0)

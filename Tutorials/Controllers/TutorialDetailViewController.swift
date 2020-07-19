@@ -67,7 +67,9 @@ class TutorialDetailViewController: UIViewController {
 		topView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(topView)
 		
-		// become target for queue button
+		// become target for queue button & set title
+		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"
+		topView.tutorialQueueButton.setTitle(buttonTitle, for: .normal)
 		topView.tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
