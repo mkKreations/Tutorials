@@ -9,6 +9,7 @@
 import UIKit
 
 class QueuedCell: UICollectionViewCell {
+	// MARK: reuseIdentifier
 	static let reuseIdentifier: String = String(describing: self)
 	
 	
@@ -30,6 +31,7 @@ class QueuedCell: UICollectionViewCell {
 	private let primaryLabel = UILabel(frame: .zero)
 	private let detailLabel = UILabel(frame: .zero)
 	private let checkboxImageView = UIImageView(frame: .zero)
+	private let imageViewSizeConstant: CGFloat = 96.0
 	
 	
 	// MARK: inits
@@ -56,12 +58,12 @@ class QueuedCell: UICollectionViewCell {
 	private func layoutQueuedSubviews() {
 		queuedImageBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
 		queuedImageBackgroundView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-		queuedImageBackgroundView.heightAnchor.constraint(equalToConstant: 96.0).isActive = true
-		queuedImageBackgroundView.widthAnchor.constraint(equalToConstant: 96.0).isActive = true
-		
+		queuedImageBackgroundView.widthAnchor.constraint(equalToConstant: imageViewSizeConstant).isActive = true
+		queuedImageBackgroundView.heightAnchor.constraint(equalTo: queuedImageBackgroundView.widthAnchor).isActive = true
+
 		queuedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
 		queuedImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-		queuedImageView.heightAnchor.constraint(equalToConstant: 96.0).isActive = true
-		queuedImageView.widthAnchor.constraint(equalToConstant: 96.0).isActive = true
+		queuedImageView.heightAnchor.constraint(equalTo: queuedImageView.widthAnchor).isActive = true
+		queuedImageView.widthAnchor.constraint(equalToConstant: imageViewSizeConstant).isActive = true
 	}
 }
