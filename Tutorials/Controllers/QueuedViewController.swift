@@ -93,9 +93,12 @@ class QueuedViewController: UIViewController {
 		}
 	}
 	private func applySnapshot() {
-		var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
-		snapShot.appendSections([.main])
-		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
-		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+		// only if controller has queuedTutorials to show
+		if !controller.queuedTutorials.isEmpty {
+			var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
+			snapShot.appendSections([.main])
+			snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
+			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+		}
 	}
 }
