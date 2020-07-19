@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C02BEAC24C4A407004E60CC /* QueuedBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02BEAB24C4A407004E60CC /* QueuedBadgeView.swift */; };
 		2C11735824BF691300B86B67 /* TutorialDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */; };
 		2C11735C24BF90DA00B86B67 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11735B24BF90DA00B86B67 /* VideoCell.swift */; };
 		2C20C02524BFEF1A00DFCCE5 /* QueuedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20C02424BFEF1A00DFCCE5 /* QueuedViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C02BEAB24C4A407004E60CC /* QueuedBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedBadgeView.swift; sourceTree = "<group>"; };
 		2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailTopView.swift; sourceTree = "<group>"; };
 		2C11735B24BF90DA00B86B67 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		2C20C02424BFEF1A00DFCCE5 /* QueuedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				2C11735724BF691300B86B67 /* TutorialDetailTopView.swift */,
 				2C11735B24BF90DA00B86B67 /* VideoCell.swift */,
 				2CC04D0324C0E09D00D0A8CE /* QueuedCell.swift */,
+				2C02BEAB24C4A407004E60CC /* QueuedBadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				2CC04D0424C0E09D00D0A8CE /* QueuedCell.swift in Sources */,
 				2CE2643324BD0D0C00109C11 /* TutorialsController.swift in Sources */,
 				2C73E36124BD4DE4009755CF /* GradientOverlayView.swift in Sources */,
+				2C02BEAC24C4A407004E60CC /* QueuedBadgeView.swift in Sources */,
 				2CE2642D24BD0B2C00109C11 /* Tutorial.swift in Sources */,
 				2C45406024BE475D00883AC0 /* TitleHeaderView.swift in Sources */,
 				2C94B49624BEC3FF00EB9665 /* Date+extensions.swift in Sources */,
