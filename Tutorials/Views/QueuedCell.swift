@@ -54,14 +54,14 @@ class QueuedCell: UICollectionViewCell {
 		contentView.addSubview(queuedImageView)
 	}
 	private func layoutQueuedSubviews() {
-		queuedImageBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
 		queuedImageBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
-		queuedImageBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16.0).isActive = true
+		queuedImageBackgroundView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+		queuedImageBackgroundView.heightAnchor.constraint(equalToConstant: 96.0).isActive = true
 		queuedImageBackgroundView.widthAnchor.constraint(equalToConstant: 96.0).isActive = true
 		
-		queuedImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
 		queuedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
-		queuedImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16.0).isActive = true
+		queuedImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+		queuedImageView.heightAnchor.constraint(equalToConstant: 96.0).isActive = true
 		queuedImageView.widthAnchor.constraint(equalToConstant: 96.0).isActive = true
 	}
 }
