@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
 								 image: UIImage(systemName: "book"),
 								 selectedImage: UIImage(systemName: "book.fill"))
 	}()
+	// unique string for our QueuedBadgeView
+	private static let queuedBadgeKind: String = String(describing: self) + String(describing: QueuedBadgeView.self)
 	
 	
 	// MARK: view life cycle methods
@@ -55,6 +57,9 @@ class HomeViewController: UIViewController {
 		collectionView.register(TitleHeaderView.self,
 														forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
 														withReuseIdentifier: TitleHeaderView.reuseIdentifier)
+		collectionView.register(QueuedBadgeView.self,
+														forSupplementaryViewOfKind: Self.queuedBadgeKind,
+														withReuseIdentifier: QueuedBadgeView.reuseIdentifier)
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
 	}
@@ -127,6 +132,29 @@ class HomeViewController: UIViewController {
 			headerView.displayText = section.title
 			
 			return headerView
+		}
+	}
+	private func configureDatasourceQueuedBadges() {
+		dataSource.supplementaryViewProvider = { [weak self] // weak self to avoid retain cycles
+			collectionView, kind, indexPath in
+			// only expecting QueuedBadgeView instances
+			guard kind == Self.queuedBadgeKind else { return nil }
+			
+			// dequeue reusable QueuedBadgeView
+			guard let badgeView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+																																						withReuseIdentifier: QueuedBadgeView.reuseIdentifier,
+																																						for: indexPath) as? QueuedBadgeView else { return nil }
+			
+			// get topic - or current section in this case
+			guard let topic = self?.dataSource.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
+			
+			// get tutorial
+			let tutorial = topic.tutorials[indexPath.row]
+			
+			// set values on badgeView
+			badgeView.isQueued = tutorial.isQueued
+			
+			return badgeView
 		}
 	}
 	private func applySnapshot() {

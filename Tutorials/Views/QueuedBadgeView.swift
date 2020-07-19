@@ -35,6 +35,7 @@ class QueuedBadgeView: UICollectionReusableView {
 		fatalError("Crash in QueuedBadgeView")
 	}
 	
+	// helper methods
 	private func configureSubviews() {
 		bookmarkImageView.translatesAutoresizingMaskIntoConstraints = false
 		bookmarkImageView.image = UIImage(systemName: "bookmark.fill")
