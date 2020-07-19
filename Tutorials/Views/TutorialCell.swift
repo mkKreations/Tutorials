@@ -16,6 +16,7 @@ class TutorialCell: UICollectionViewCell {
 	private var tutorialImageView: UIImageView!
 	private var gradientView: GradientOverlayView!
 	private var tutorialLabel: UILabel!
+	private var isQueuedImageView: UIImageView!
 	
 	
 	// MARK: public setters
@@ -73,6 +74,10 @@ class TutorialCell: UICollectionViewCell {
 		tutorialLabel.textColor = .white
 		tutorialLabel.numberOfLines = 2
 		contentView.addSubview(tutorialLabel)
+		
+		isQueuedImageView = UIImageView(image: UIImage(systemName: "bookmark"))
+		isQueuedImageView.translatesAutoresizingMaskIntoConstraints = false
+		contentView.addSubview(isQueuedImageView)
 	}
 	private func layoutTutorialViews() {
 		tutorialImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -88,5 +93,8 @@ class TutorialCell: UICollectionViewCell {
 		tutorialLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
 		tutorialLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0).isActive = true
 		tutorialLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
+		
+		isQueuedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
+		isQueuedImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
 	}
 }
