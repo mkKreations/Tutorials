@@ -144,7 +144,15 @@ extension HomeViewController: UICollectionViewDelegate {
 		// get selectedTutorial
 		guard let selectedTutorial = dataSource.itemIdentifier(for: indexPath) else { return }
 		let detailVC = TutorialDetailViewController()
+		detailVC.delegate = self
 		detailVC.tutorial = selectedTutorial
 		navigationController?.pushViewController(detailVC, animated: true)
+	}
+}
+
+extension HomeViewController: QueuedTutorialDelegate {
+	func queuedButtonPressed(forTutorial tutorial: Tutorial) {
+		// pass tutorial onto controller
+		controller.queueTutorial(tutorial)
 	}
 }

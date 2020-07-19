@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol QueuedTutorialDelegate: AnyObject {
+	func queuedButtonPressed(forTutorial tutorial: Tutorial)
+}
+
 class TutorialDetailViewController: UIViewController {
 	// MARK: dependencies
 	var tutorial: Tutorial! {
@@ -18,6 +22,7 @@ class TutorialDetailViewController: UIViewController {
 			topView.tutorialBackgroundView.backgroundColor = UIColor(hexString: tutorial.artworkColor)
 		}
 	}
+	var delegate: QueuedTutorialDelegate?
 	
 	
 	// MARK: subview properties
@@ -49,6 +54,9 @@ class TutorialDetailViewController: UIViewController {
 	@objc private func queueButtonPressed(_ sender: UIButton) {
 		// update model
 		tutorial.isQueued.toggle()
+		
+		// pass selected/deselected tutorial onto delegate
+		delegate?.queuedButtonPressed(forTutorial: tutorial)
 		
 		// determine buttonTitle for model state
 		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"

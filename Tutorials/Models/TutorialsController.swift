@@ -17,15 +17,7 @@ import Foundation
 class TutorialsController {
 	var topics: [Topic]
 	// for QueuedViewController
-	var queuedTutorials: [Tutorial] {
-		var tmp = [Tutorial]()
-		topics.forEach { topic in
-			topic.tutorials.forEach { tutorial in
-				if tutorial.isQueued { tmp.append(tutorial) }
-			}
-		}
-		return tmp
-	}
+	var queuedTutorials = [Tutorial]()
 	
 	// singleton
 	static let shared = TutorialsController()
@@ -40,5 +32,16 @@ class TutorialsController {
 			return
 		}
 		topics = topicsData // we decoded our plist so set to internal property
+	}
+	
+	// helper methods
+	func queueTutorial(_ tutorial: Tutorial) {
+		if tutorial.isQueued {
+			queuedTutorials.append(tutorial)
+		} else {
+			if let removedIndex = queuedTutorials.firstIndex(of: tutorial) {
+				queuedTutorials.remove(at: removedIndex)
+			}
+		}
 	}
 }
