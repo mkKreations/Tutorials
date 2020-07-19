@@ -16,6 +16,16 @@ import Foundation
 
 class TutorialsController {
 	var topics: [Topic]
+	// for QueuedViewController
+	var queuedTutorials: [Tutorial] {
+		var tmp = [Tutorial]()
+		topics.forEach { topic in
+			topic.tutorials.forEach { tutorial in
+				if tutorial.isQueued { tmp.append(tutorial) }
+			}
+		}
+		return tmp
+	}
 	
 	// singleton
 	static let shared = TutorialsController()
