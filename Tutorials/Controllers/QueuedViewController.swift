@@ -10,7 +10,19 @@ import UIKit
 
 class QueuedViewController: UIViewController {
 	// MARK: stored properties
-	private var collectionView: UICollectionView!
+	private lazy var collectionView: UICollectionView = {
+		let statusBarHeight: CGFloat = 20.0 // not using windowScene and UIApplication.shared.statusBarFrame is deprecated iOS13
+		let viewHeight: CGFloat = view.frame.size.height
+		let navBarHeight: CGFloat = navigationController!.navigationBar.frame.size.height
+		let tabBarHeight: CGFloat = tabBarController!.tabBar.frame.size.height
+		// using frames because autoLayout resizes collectionView
+		// cells when overriding edgesForExtendedLayout in viewDidLoad
+		return UICollectionView(frame: CGRect(x: view.frame.minX,
+																					y: view.frame.minY,
+																					width: view.frame.size.width,
+																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
+																					collectionViewLayout: UICollectionViewFlowLayout())
+	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
 	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
@@ -30,6 +42,9 @@ class QueuedViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// removes view from going under navBar & tabBar
+		edgesForExtendedLayout = []
+		
 		configureCollectionView()
 		configureDatasource()
 		applySnapshot()
@@ -38,19 +53,11 @@ class QueuedViewController: UIViewController {
 	
 	// MARK: collectionView config
 	private func configureCollectionView() {
-		collectionView = UICollectionView(frame: .zero,
-																			collectionViewLayout: configureCollectionViewLayout())
-		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		// override standard flow layout with our custom one
+		collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
+		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
-		
-		layoutCollectionView()
-	}
-	private func layoutCollectionView() {
-		collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 	}
 	
 	
