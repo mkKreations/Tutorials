@@ -50,7 +50,7 @@ class QueuedViewController: UIViewController {
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		applySnapshot()
+		applySnapshot() // this applies the snapShot
 	}
 	
 	
@@ -96,6 +96,6 @@ class QueuedViewController: UIViewController {
 		var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
 		snapShot.appendSections([.main])
 		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
-		dataSource.apply(snapShot)
+		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
 }
