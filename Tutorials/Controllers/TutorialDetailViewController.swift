@@ -89,7 +89,7 @@ class TutorialDetailViewController: UIViewController {
 		collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
-		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 6.0).isActive = true
+		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -6.0).isActive = true
 	}
 	
 	
