@@ -20,6 +20,9 @@ class QueuedCell: UICollectionViewCell {
 				queuedImageView.image = UIImage(named: queuedTutorial.thumbnail)
 				queuedImageBackgroundView.backgroundColor = UIColor(hexString: queuedTutorial.artworkColor)
 			}
+			// these properties don't need to be unwrapped to be set
+			primaryLabel.text = tutorial?.title
+			detailLabel.text = tutorial?.publishDate.formattedPublishDateString
 		}
 	}
 	
@@ -57,6 +60,26 @@ class QueuedCell: UICollectionViewCell {
 		queuedImageView.translatesAutoresizingMaskIntoConstraints = false
 		queuedImageView.contentMode = .scaleAspectFit
 		contentView.addSubview(queuedImageView)
+		
+		labelStackView.translatesAutoresizingMaskIntoConstraints = false
+		labelStackView.axis = .vertical
+		labelStackView.distribution = .fill
+		labelStackView.alignment = .leading
+		labelStackView.spacing = 8.0
+		
+		primaryLabel.translatesAutoresizingMaskIntoConstraints = false
+		primaryLabel.font = .preferredFont(forTextStyle: .title2)
+		primaryLabel.textColor = .white
+		primaryLabel.numberOfLines = 2
+		labelStackView.addArrangedSubview(primaryLabel)
+		
+		detailLabel.translatesAutoresizingMaskIntoConstraints = false
+		detailLabel.font = .preferredFont(forTextStyle: .body)
+		detailLabel.textColor = .lightGray
+		detailLabel.numberOfLines = 1
+		labelStackView.addArrangedSubview(detailLabel)
+		
+		contentView.addSubview(labelStackView)
 	}
 	private func layoutQueuedSubviews() {
 		queuedImageBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
@@ -68,5 +91,11 @@ class QueuedCell: UICollectionViewCell {
 		queuedImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
 		queuedImageView.heightAnchor.constraint(equalTo: queuedImageView.widthAnchor).isActive = true
 		queuedImageView.widthAnchor.constraint(equalToConstant: imageViewSizeConstant).isActive = true
+		
+		// setting stackView size based on imageView
+		labelStackView.leadingAnchor.constraint(equalTo: queuedImageView.trailingAnchor, constant: 16.0).isActive = true
+		labelStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+		labelStackView.topAnchor.constraint(equalTo: queuedImageView.topAnchor).isActive = true
+		labelStackView.bottomAnchor.constraint(lessThanOrEqualTo: queuedImageView.bottomAnchor).isActive = true
 	}
 }
