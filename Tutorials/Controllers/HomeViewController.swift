@@ -10,7 +10,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	// MARK: stored properties
-	private var collectionView: UICollectionView!
+	private lazy var collectionView: UICollectionView = {
+		let statusBarHeight: CGFloat = 20.0 // not using windowScene and UIApplication.shared.statusBarFrame is deprecated iOS13
+		let viewHeight: CGFloat = view.frame.size.height
+		let navBarHeight: CGFloat = navigationController!.navigationBar.frame.size.height
+		let tabBarHeight: CGFloat = tabBarController!.tabBar.frame.size.height
+		// using frames because autoLayout resizes collectionView
+		// cells when overriding edgesForExtendedLayout in viewDidLoad
+		return UICollectionView(frame: CGRect(x: view.frame.minX,
+																					y: view.frame.minY,
+																					width: view.frame.size.width,
+																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
+																					collectionViewLayout: UICollectionViewFlowLayout())
+	}()
 	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
 	private let controller = TutorialsController.shared
 	lazy var homeTabBarItem: UITabBarItem = {
@@ -24,6 +36,9 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// removes view from going under navBar & tabBar
+		edgesForExtendedLayout = []
+		
 		configureCollectionView()
 		configureDatasource()
 		applySnapshot()
@@ -32,9 +47,8 @@ class HomeViewController: UIViewController {
 	
 	// MARK: collectionView configuration
 	private func configureCollectionView() {
-		// passing in standard flow layout for now
-		collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCompositionalLayout())
-		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		// override standard flow layout with our custom one
+		collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: false)
 		collectionView.delegate = self
 		collectionView.register(TutorialCell.self,
 														forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
@@ -43,16 +57,8 @@ class HomeViewController: UIViewController {
 														withReuseIdentifier: TitleHeaderView.reuseIdentifier)
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
-		
-		layoutCollectionView()
 	}
-	private func layoutCollectionView() {
-		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-	}
-	
+
 	
 	// MARK: collectionView dependencies configuration
 	private func configureCompositionalLayout() -> UICollectionViewCompositionalLayout {
