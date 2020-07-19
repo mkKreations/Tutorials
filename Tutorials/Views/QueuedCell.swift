@@ -38,6 +38,9 @@ class QueuedCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
+		contentView.backgroundColor = .darkGray
+		contentView.layer.cornerRadius = 10.0
+		
 		configureQueuedSubviews()
 		layoutQueuedSubviews()
 	}
