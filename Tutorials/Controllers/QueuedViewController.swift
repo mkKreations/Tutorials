@@ -47,6 +47,9 @@ class QueuedViewController: UIViewController {
 		
 		configureCollectionView()
 		configureDatasource()
+	}
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		applySnapshot()
 	}
 	
@@ -92,7 +95,7 @@ class QueuedViewController: UIViewController {
 	private func applySnapshot() {
 		var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
 		snapShot.appendSections([.main])
-		snapShot.appendItems(controller.topics.first!.tutorials) // not actual data - sample data for now
+		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
 		dataSource.apply(snapShot)
 	}
 }
