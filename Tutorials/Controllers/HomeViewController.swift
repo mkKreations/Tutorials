@@ -74,7 +74,8 @@ class HomeViewController: UIViewController {
 		// queued badge
 		let badgeSize = NSCollectionLayoutSize(widthDimension: .estimated(20.0),
 																					 heightDimension: .absolute(20.0))
-		let badgeAnchor = NSCollectionLayoutAnchor(edges: [.top, .leading])
+		let badgeAnchor = NSCollectionLayoutAnchor(edges: [.top, .leading],
+																							 absoluteOffset: CGPoint(x: 16.0, y: 16.0))
 		let badgeView = NSCollectionLayoutSupplementaryItem(layoutSize: badgeSize,
 																												elementKind: Self.queuedBadgeKind,
 																												containerAnchor: badgeAnchor)
@@ -133,6 +134,7 @@ class HomeViewController: UIViewController {
 			collectionView, kind, indexPath -> UICollectionReusableView? in // full closure signature for clarity
 			
 			// unpack topic with conditional self to pass into helper methods
+			// mainly so we don't have to access self within helper methods
 			guard let topic = self?.dataSource.snapshot().sectionIdentifiers[indexPath.section] else { return nil }
 			
 			switch kind {
