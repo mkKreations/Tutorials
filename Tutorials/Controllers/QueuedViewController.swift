@@ -65,16 +65,14 @@ class QueuedViewController: UIViewController {
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		
-		setBarButtonsState(forIsEditing: editing)
+		// manage trashBarButton enabled state
+		trashBarButton.isEnabled = (isEditing && collectionView.indexPathsForSelectedItems != nil)
 	}
 	
 	// MARK: bar buttons
 	private func configureBarButtons() {
 		navigationItem.leftBarButtonItem = editButtonItem
 		navigationItem.rightBarButtonItem = trashBarButton
-	}
-	private func setBarButtonsState(forIsEditing isEditing: Bool) {
-		
 	}
 	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
 		print("Trash bar button pressed")
