@@ -95,7 +95,19 @@ class QueuedViewController: UIViewController {
 																!collectionView.indexPathsForSelectedItems!.isEmpty)
 	}
 	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
-		print("Trash bar button pressed")
+		if let selectedIndexPaths = collectionView.indexPathsForSelectedItems,
+			 !selectedIndexPaths.isEmpty {
+			// get current snapShot
+			var snapShot = dataSource.snapshot()
+			// get Tutorial objects from selectedIndexPaths
+			let deletedTutorials = selectedIndexPaths.map { snapShot.itemIdentifiers[$0.row] }
+			// delete Tutorial objects from model
+			controller.deleteQueuedTutorials(deletedTutorials)
+			// delete Tutorial objects from collectionView
+			snapShot.deleteItems(deletedTutorials)
+			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+		}
+		manageTrashBarButtonState(forIsEditing: isEditing)
 	}
 	
 	
