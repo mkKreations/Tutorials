@@ -66,7 +66,14 @@ class QueuedViewController: UIViewController {
 		super.setEditing(editing, animated: animated)
 		
 		// manage trashBarButton enabled state
-		trashBarButton.isEnabled = (isEditing && collectionView.indexPathsForSelectedItems != nil)
+		trashBarButton.isEnabled = (isEditing &&
+																collectionView.indexPathsForSelectedItems != nil &&
+																!collectionView.indexPathsForSelectedItems!.isEmpty)
+
+		if !collectionView.indexPathsForVisibleItems.isEmpty {
+//			collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems) // this causes crash with diffableDatasource
+			collectionView.reloadData()
+		}
 	}
 	
 	// MARK: bar buttons
@@ -109,10 +116,12 @@ class QueuedViewController: UIViewController {
 	}
 	private func configureDatasource() {
 		dataSource = UICollectionViewDiffableDataSource<QueuedSection, Tutorial>(collectionView: collectionView) {
-			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+			[weak self] (collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+			guard let self = self else { return nil } // unpack conditional self
 			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QueuedCell.reuseIdentifier,
 																													for: indexPath) as? QueuedCell else { return nil }
 			cell.tutorial = tutorial
+			cell.hideCheckbox = !self.isEditing
 			return cell
 		}
 	}

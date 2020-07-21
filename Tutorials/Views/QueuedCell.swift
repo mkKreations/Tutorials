@@ -25,6 +25,17 @@ class QueuedCell: UICollectionViewCell {
 			detailLabel.text = tutorial?.publishDate.formattedPublishDateString
 		}
 	}
+	var hideCheckbox: Bool = true {
+		didSet {
+			checkboxImageView.isHidden = hideCheckbox
+		}
+	}
+	override var isSelected: Bool {
+		didSet {
+			print(isSelected)
+			checkboxImageView.image = isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+		}
+	}
 	
 	
 	// MARK: subview properties
@@ -83,7 +94,7 @@ class QueuedCell: UICollectionViewCell {
 		
 		checkboxImageView.translatesAutoresizingMaskIntoConstraints = false
 		checkboxImageView.image = UIImage(systemName: "checkmark.circle")
-		checkboxImageView.isHidden = true
+		checkboxImageView.isHidden = hideCheckbox
 		contentView.addSubview(checkboxImageView)
 	}
 	private func layoutQueuedSubviews() {
