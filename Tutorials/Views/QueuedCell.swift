@@ -32,7 +32,6 @@ class QueuedCell: UICollectionViewCell {
 	}
 	override var isSelected: Bool {
 		didSet {
-			print(isSelected)
 			checkboxImageView.image = isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
 		}
 	}

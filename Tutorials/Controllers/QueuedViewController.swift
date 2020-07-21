@@ -66,13 +66,18 @@ class QueuedViewController: UIViewController {
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		
+		// set editing state within our delegate
+		collectionViewDelegate.isEditing = editing
+		
 		// manage trashBarButton enabled state
 		trashBarButton.isEnabled = (isEditing &&
 																collectionView.indexPathsForSelectedItems != nil &&
 																!collectionView.indexPathsForSelectedItems!.isEmpty)
 
 		if !collectionView.indexPathsForVisibleItems.isEmpty {
-//			collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems) // this causes crash with diffableDatasource
+			// diffableDatasource doesn't play nicely with reloading specific items
+			// therefore we gotta reload the whole thang
+//			collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
 			collectionView.reloadData()
 		}
 	}
