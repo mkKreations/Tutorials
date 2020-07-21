@@ -80,6 +80,11 @@ class QueuedCell: UICollectionViewCell {
 		labelStackView.addArrangedSubview(detailLabel)
 		
 		contentView.addSubview(labelStackView)
+		
+		checkboxImageView.translatesAutoresizingMaskIntoConstraints = false
+		checkboxImageView.image = UIImage(systemName: "checkmark.circle")
+		checkboxImageView.isHidden = true
+		contentView.addSubview(checkboxImageView)
 	}
 	private func layoutQueuedSubviews() {
 		queuedImageBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0).isActive = true
@@ -97,5 +102,8 @@ class QueuedCell: UICollectionViewCell {
 		labelStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
 		labelStackView.topAnchor.constraint(equalTo: queuedImageView.topAnchor).isActive = true
 		labelStackView.bottomAnchor.constraint(lessThanOrEqualTo: queuedImageView.bottomAnchor).isActive = true
+		
+		checkboxImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0).isActive = true
+		checkboxImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
 	}
 }
