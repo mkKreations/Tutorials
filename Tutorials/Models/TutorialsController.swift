@@ -44,4 +44,13 @@ class TutorialsController {
 			}
 		}
 	}
+	func deleteQueuedTutorials(_ tutorials: [Tutorial]) {
+		tutorials.forEach { deleteQueuedTutorial($0) }
+	}
+	private func deleteQueuedTutorial(_ tutorial: Tutorial) {
+		if let deleteIndex = queuedTutorials.firstIndex(of: tutorial) {
+			tutorial.isQueued = false // remove from queue
+			queuedTutorials.remove(at: deleteIndex)
+		}
+	}
 }
