@@ -32,6 +32,7 @@ class QueuedViewController: UIViewController {
 		return trash
 	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
+	private let collectionViewDelegate = QueuedCollectionDelegate()
 	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
@@ -90,6 +91,8 @@ class QueuedViewController: UIViewController {
 	private func configureCollectionView() {
 		// override standard flow layout with our custom one
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
+		collectionView.delegate = collectionViewDelegate
+		collectionView.allowsMultipleSelection = true
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
 	}
