@@ -10,6 +10,7 @@ import UIKit
 
 protocol QueuedSelectionDelegate: AnyObject {
 	func didSelectItem(atIndexPath indexPath: IndexPath)
+	func didDeselectItem(atIndexPath indexPath: IndexPath)
 }
 
 class QueuedCollectionDelegate: NSObject, UICollectionViewDelegate {
@@ -28,5 +29,8 @@ class QueuedCollectionDelegate: NSObject, UICollectionViewDelegate {
 	}
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		delegate?.didSelectItem(atIndexPath: indexPath)
+	}
+	func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+		delegate?.didDeselectItem(atIndexPath: indexPath)
 	}
 }

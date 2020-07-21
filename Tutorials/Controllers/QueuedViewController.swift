@@ -72,11 +72,6 @@ class QueuedViewController: UIViewController {
 		
 		// set editing state within our delegate
 		collectionViewDelegate.isEditing = editing
-		
-		// manage trashBarButton enabled state
-		trashBarButton.isEnabled = (isEditing &&
-																collectionView.indexPathsForSelectedItems != nil &&
-																!collectionView.indexPathsForSelectedItems!.isEmpty)
 
 		if !collectionView.indexPathsForVisibleItems.isEmpty {
 			// diffableDatasource doesn't play nicely with reloading specific items
@@ -90,6 +85,11 @@ class QueuedViewController: UIViewController {
 	private func configureBarButtons() {
 		navigationItem.leftBarButtonItem = editButtonItem
 		navigationItem.rightBarButtonItem = trashBarButton
+	}
+	private func manageTrashBarButtonState(forIsEditing editing: Bool) {
+		trashBarButton.isEnabled = (editing &&
+																collectionView.indexPathsForSelectedItems != nil &&
+																!collectionView.indexPathsForSelectedItems!.isEmpty)
 	}
 	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
 		print("Trash bar button pressed")
@@ -149,6 +149,11 @@ class QueuedViewController: UIViewController {
 // MARK: collectionView delegate extension
 extension QueuedViewController: QueuedSelectionDelegate {
 	func didSelectItem(atIndexPath indexPath: IndexPath) {
-		print(indexPath)
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: isEditing)
+	}
+	func didDeselectItem(atIndexPath indexPath: IndexPath) {
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: isEditing)
 	}
 }
