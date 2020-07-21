@@ -48,9 +48,7 @@ class TutorialsController {
 		tutorials.forEach { deleteQueuedTutorial($0) }
 	}
 	private func deleteQueuedTutorial(_ tutorial: Tutorial) {
-		if let deleteIndex = queuedTutorials.firstIndex(of: tutorial) {
-			tutorial.isQueued = false // remove from queue
-			queuedTutorials.remove(at: deleteIndex)
-		}
+		tutorial.isQueued = false // we no longer want this Tutorial queued
+		queueTutorial(tutorial) // remove from queue
 	}
 }
