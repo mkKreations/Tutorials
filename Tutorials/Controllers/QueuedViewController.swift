@@ -106,6 +106,9 @@ class QueuedViewController: UIViewController {
 			// delete Tutorial objects from collectionView
 			snapShot.deleteItems(deletedTutorials)
 			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+			
+			// reset isEditing
+			isEditing.toggle()
 		}
 		manageTrashBarButtonState(forIsEditing: isEditing)
 	}
