@@ -45,12 +45,22 @@ class QueuedViewController: UIViewController {
 		// removes view from going under navBar & tabBar
 		edgesForExtendedLayout = []
 		
+		configureBarButtons()
 		configureCollectionView()
 		configureDatasource()
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		applySnapshot() // this applies the snapShot
+	}
+	
+	override func setEditing(_ editing: Bool, animated: Bool) {
+		super.setEditing(editing, animated: animated)
+	}
+	
+	// MARK: bar buttons
+	private func configureBarButtons() {
+		navigationItem.leftBarButtonItem = editButtonItem
 	}
 	
 	
