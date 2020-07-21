@@ -77,10 +77,10 @@ class QueuedViewController: UIViewController {
 		manageTrashBarButtonState(forIsEditing: editing)
 
 		if !collectionView.indexPathsForVisibleItems.isEmpty {
-			// diffableDatasource doesn't play nicely with reloading specific items
-			// therefore we gotta reload the whole thang
-//			collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
-			collectionView.reloadData()
+			var snapShot = dataSource.snapshot()
+			let visibleTutorials = collectionView.indexPathsForVisibleItems.map { snapShot.itemIdentifiers[$0.row] }
+			snapShot.reloadItems(visibleTutorials)
+			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 		}
 	}
 	
