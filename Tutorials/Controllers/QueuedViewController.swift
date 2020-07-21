@@ -61,6 +61,13 @@ class QueuedViewController: UIViewController {
 	// MARK: bar buttons
 	private func configureBarButtons() {
 		navigationItem.leftBarButtonItem = editButtonItem
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"),
+																												style: .plain,
+																												target: self,
+																												action: #selector(trashBarButtonPressed))
+	}
+	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
+		print("Trash bar button pressed")
 	}
 	
 	
