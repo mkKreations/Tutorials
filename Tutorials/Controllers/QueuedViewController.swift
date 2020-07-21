@@ -32,7 +32,11 @@ class QueuedViewController: UIViewController {
 		return trash
 	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
-	private let collectionViewDelegate = QueuedCollectionDelegate()
+	private lazy var collectionViewDelegate: QueuedCollectionDelegate = {
+		let collectionDelegate = QueuedCollectionDelegate()
+		collectionDelegate.delegate = self // become delegate
+		return collectionDelegate
+	}()
 	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
@@ -138,5 +142,13 @@ class QueuedViewController: UIViewController {
 		snapShot.appendSections([.main])
 		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+	}
+}
+
+
+// MARK: collectionView delegate extension
+extension QueuedViewController: QueuedSelectionDelegate {
+	func didSelectItem(atIndexPath indexPath: IndexPath) {
+		print(indexPath)
 	}
 }

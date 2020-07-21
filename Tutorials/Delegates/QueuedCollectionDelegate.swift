@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol QueuedSelectionDelegate: AnyObject {
+	func didSelectItem(atIndexPath indexPath: IndexPath)
+}
+
 class QueuedCollectionDelegate: NSObject, UICollectionViewDelegate {
 	var isEditing: Bool = false
+	weak var delegate: QueuedSelectionDelegate?
 	
 	// manually handle the selection/delesection of collectionView cells
 	func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -20,5 +25,8 @@ class QueuedCollectionDelegate: NSObject, UICollectionViewDelegate {
 			return false
 		}
 		return true
+	}
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		delegate?.didSelectItem(atIndexPath: indexPath)
 	}
 }
