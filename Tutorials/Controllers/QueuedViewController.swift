@@ -21,7 +21,7 @@ class QueuedViewController: UIViewController {
 																					y: view.frame.minY,
 																					width: view.frame.size.width,
 																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
-																					collectionViewLayout: UICollectionViewFlowLayout())
+																					collectionViewLayout: configureCollectionViewLayout())
 	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
 	private let controller = TutorialsController.shared
@@ -57,7 +57,6 @@ class QueuedViewController: UIViewController {
 	// MARK: collectionView config
 	private func configureCollectionView() {
 		// override standard flow layout with our custom one
-		collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
