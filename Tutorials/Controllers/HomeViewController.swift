@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
 																					y: view.frame.minY,
 																					width: view.frame.size.width,
 																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
-																					collectionViewLayout: UICollectionViewFlowLayout())
+																					collectionViewLayout: configureCompositionalLayout())
 	}()
 	private var dataSource: UICollectionViewDiffableDataSource<Topic, Tutorial>!
 	private let controller = TutorialsController.shared
@@ -43,10 +43,6 @@ class HomeViewController: UIViewController {
 		
 		configureCollectionView()
 		configureDatasource()
-//		applySnapshot()
-	}
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
 		applySnapshot()
 	}
 	
@@ -54,7 +50,6 @@ class HomeViewController: UIViewController {
 	// MARK: collectionView configuration
 	private func configureCollectionView() {
 		// override standard flow layout with our custom one
-		collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: false)
 		collectionView.delegate = self
 		collectionView.register(TutorialCell.self,
 														forCellWithReuseIdentifier: TutorialCell.reuseIdentifier)
