@@ -23,6 +23,14 @@ class QueuedViewController: UIViewController {
 																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
 																					collectionViewLayout: configureCollectionViewLayout())
 	}()
+	private lazy var trashBarButton: UIBarButtonItem = {
+		let trash = UIBarButtonItem(image: UIImage(systemName: "trash"),
+																style: .plain,
+																target: self,
+																action: #selector(trashBarButtonPressed))
+		trash.isEnabled = false // default to not enabled
+		return trash
+	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
 	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
@@ -56,15 +64,17 @@ class QueuedViewController: UIViewController {
 	
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
+		
+		setBarButtonsState(forIsEditing: editing)
 	}
 	
 	// MARK: bar buttons
 	private func configureBarButtons() {
 		navigationItem.leftBarButtonItem = editButtonItem
-		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"),
-																												style: .plain,
-																												target: self,
-																												action: #selector(trashBarButtonPressed))
+		navigationItem.rightBarButtonItem = trashBarButton
+	}
+	private func setBarButtonsState(forIsEditing isEditing: Bool) {
+		
 	}
 	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
 		print("Trash bar button pressed")
