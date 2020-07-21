@@ -48,7 +48,13 @@ class TutorialDetailViewController: UIViewController {
 		configureDatasource()
 		applySnapshot()
 	}
-	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		// always keep button text in sync
+		// with data when view appears
+		animateQueuedButtonTitleUpdate()
+	}
 	
 	// MARK: actions
 	@objc private func queueButtonPressed(_ sender: UIButton) {
@@ -58,6 +64,13 @@ class TutorialDetailViewController: UIViewController {
 		// pass selected/deselected tutorial onto delegate
 		delegate?.queuedButtonPressed(forTutorial: tutorial)
 		
+		// determine buttonTitle for model state
+		animateQueuedButtonTitleUpdate()
+	}
+	
+	
+	// MARK: helper methods
+	private func animateQueuedButtonTitleUpdate() {
 		// determine buttonTitle for model state
 		let buttonTitle = self.tutorial.isQueued ? "Remove from Queue" : "Add to Queue"
 		
