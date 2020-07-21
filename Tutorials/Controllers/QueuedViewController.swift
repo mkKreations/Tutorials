@@ -72,6 +72,9 @@ class QueuedViewController: UIViewController {
 		
 		// set editing state within our delegate
 		collectionViewDelegate.isEditing = editing
+		
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: editing)
 
 		if !collectionView.indexPathsForVisibleItems.isEmpty {
 			// diffableDatasource doesn't play nicely with reloading specific items
