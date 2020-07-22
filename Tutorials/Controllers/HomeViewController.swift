@@ -56,6 +56,8 @@ class HomeViewController: UIViewController {
 		collectionView.register(TitleHeaderView.self,
 														forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
 														withReuseIdentifier: TitleHeaderView.reuseIdentifier)
+		// check QueuedBadgeView file to see why
+		// this supplementary view is being hidden
 		collectionView.register(QueuedBadgeView.self,
 														forSupplementaryViewOfKind: Self.queuedBadgeKind,
 														withReuseIdentifier: QueuedBadgeView.reuseIdentifier)
@@ -136,6 +138,8 @@ class HomeViewController: UIViewController {
 			case UICollectionView.elementKindSectionHeader: // secion headers
 				return self?.configureDatasourceSectionHeaders(collectionView, kind, indexPath, topic)
 			case Self.queuedBadgeKind: // badge view
+				// check QueuedBadgeView file to see why
+				// this supplementary view is being hidden
 				return self?.configureDatasourceQueuedBadges(collectionView, kind, indexPath, topic)
 			default:
 				return nil
