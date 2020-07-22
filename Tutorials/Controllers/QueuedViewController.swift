@@ -8,6 +8,11 @@
 
 import UIKit
 
+// TODO:
+// leaving in code to display QueuedBadgeView because I want to get it
+// working but as of now, I can not get the badges to display correctly
+// going to mimic this behavior using a subview on the QueuedCell instead
+
 class QueuedViewController: UIViewController {
 	// MARK: stored properties
 	private lazy var collectionView: UICollectionView = {
@@ -64,9 +69,11 @@ class QueuedViewController: UIViewController {
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		applySnapshot() // this applies the snapShot
+		applySnapshot() // applying each time view appears
 	}
 	
+	
+	// MARK: edit mode
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		
@@ -76,6 +83,7 @@ class QueuedViewController: UIViewController {
 		// manage trash bar button state
 		manageTrashBarButtonState(forIsEditing: editing)
 
+		// update visible cells
 		if !collectionView.indexPathsForVisibleItems.isEmpty {
 			var snapShot = dataSource.snapshot()
 			let visibleTutorials = collectionView.indexPathsForVisibleItems.map { snapShot.itemIdentifiers[$0.row] }
@@ -83,6 +91,7 @@ class QueuedViewController: UIViewController {
 			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 		}
 	}
+	
 	
 	// MARK: bar buttons
 	private func configureBarButtons() {
@@ -101,7 +110,7 @@ class QueuedViewController: UIViewController {
 			var snapShot = dataSource.snapshot()
 			// get Tutorial objects from selectedIndexPaths
 			let deletedTutorials = selectedIndexPaths.map { snapShot.itemIdentifiers[$0.row] }
-			// delete Tutorial objects from model
+			// delete Tutorial objects from controller
 			controller.deleteQueuedTutorials(deletedTutorials)
 			// delete Tutorial objects from collectionView
 			snapShot.deleteItems(deletedTutorials)
@@ -116,7 +125,6 @@ class QueuedViewController: UIViewController {
 	
 	// MARK: collectionView config
 	private func configureCollectionView() {
-		// override standard flow layout with our custom one
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
 		collectionView.delegate = collectionViewDelegate
 		collectionView.allowsMultipleSelection = true
@@ -158,7 +166,7 @@ class QueuedViewController: UIViewController {
 	private func applySnapshot() {
 		var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
 		snapShot.appendSections([.main])
-		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
+		snapShot.appendItems(controller.queuedTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
 }

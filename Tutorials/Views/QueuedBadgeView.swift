@@ -8,6 +8,14 @@
 
 import UIKit
 
+// TODO:
+// currently hiding this reusable view and using a subview of
+// QueuedCell to mimic this behavior - the original idea was
+// to use a supplementaryView on the collectionView for this
+// but I can not get this view to show properly
+// the code to run this view is all still in place (in QueuedVC),
+// just uncomment didSet to try to get this working again
+
 class QueuedBadgeView: UICollectionReusableView {
 	// reuseIdentifier
 	static let reuseIdentifier: String = String(describing: self)
@@ -18,10 +26,10 @@ class QueuedBadgeView: UICollectionReusableView {
 	// setters
 	var isQueued: Bool? {
 		didSet {
-			if let queued = isQueued {
-				// only show when Tutorial isQueued
-				bookmarkImageView.isHidden = !queued
-			}
+//			if let queued = isQueued {
+//				// only show when Tutorial isQueued
+//				bookmarkImageView.isHidden = !queued
+//			}
 		}
 	}
 	
