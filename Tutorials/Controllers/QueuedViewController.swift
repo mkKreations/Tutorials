@@ -36,8 +36,8 @@ class QueuedViewController: UIViewController {
 		return trash
 	}()
 	private lazy var disabledTrashBarButton: UIBarButtonItem = {
-		// pretty cool how we can change tintColor & rendering mode of SFSymbols
-		let disabledTrashImage = UIImage(systemName: "trash")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+		// pretty cool how we can change tintColor of SFSymbols
+		let disabledTrashImage = UIImage(systemName: "trash")?.withTintColor(.darkGray)
 		let trash = UIBarButtonItem(image: disabledTrashImage,
 																style: .plain,
 																target: self,
