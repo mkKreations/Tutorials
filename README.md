@@ -1,4 +1,4 @@
-# MountainSearch
+# Tutorials
 
 
 ## Screenshots
@@ -34,28 +34,28 @@
 
 ## Description
 
-This is a simple iOS that allows a user to search through a number of famous Mountains and learn basic
-details about them. The basis of this app is a collectionView with a UISearchController. This version of
-the app beautifully, and seamlessly, animates when as a user searches. The sledgehammer approach of reloadData()
-has been replaced instead with only reloading the necessary indexPaths to produce a much more lively feeling. 
-This app splits responsibility in order to manage the collectionView and search controller properly by having 
-types that act specifically as the dataSource/delegate/flowLayout and so on. This app is built entirely 
-on UIKit and is designed to run on devices running iOS11 and up.
+Tutorials is an iOS app that displays several collections of Tutorial topics as a library. The user can scroll
+through the different sections of Tutorials and select whichever one interests them. A detail screen displays 
+the details of a specific Tutorial and provides a list of videos related to that Tutorial. Currently, the videos
+are not interactive. However, the user can queue whichever Tutorial topic that are of interest of them and that
+list is maintained within another tab. From here, a user can delete any queued Tutorial topics. This app is designed
+for iOS devices running iOS 13 and up as it uses compositionalLayout and diffableDatasource to manage its collectionViews. 
 
 
 ## Features
 
-- Manages indexPaths to create seamless search animation as user types
-- Uses custom classes to manage all aspects of UICollectionView
-- Utilizes UISearchController to manage results of UICollectionView
-- Loads raw data from CSV
+- Presents library of Tutorials with collectionView using orthogonal scrolling
+- Manages the state of Tutorial items that are queued with animation
+- Uses snapshots and diffableDatasource to maintain user-updated state of collectionViews
+- Animates all interactions with collectionViews
+- Loads raw data from a plist
 
 
 ## Disclaimer
 
 Some issues identified:
 
-- IndexPaths are reset when returning from detail screen
+- Currently have not found solution to presenting supplementaryView on item within HomeViewController
 
 
 ## Feedback
