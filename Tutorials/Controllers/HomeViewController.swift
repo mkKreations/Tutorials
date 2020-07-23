@@ -45,6 +45,13 @@ class HomeViewController: UIViewController {
 		configureDatasource()
 		applySnapshot()
 	}
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
+		// reload visible cells to display
+		// bookmarked Tutorials or not
+		reloadVisibleTutorialCells()
+	}
 	
 	
 	// MARK: collectionView configuration
@@ -120,6 +127,7 @@ class HomeViewController: UIViewController {
 			cell.tutorialImageName = tutorial.thumbnail
 			cell.tutorialText = tutorial.title
 			cell.tutorialBackgroundColor = tutorial.artworkColor
+			cell.isQueued = tutorial.isQueued
 			return cell
 		}
 		
@@ -181,6 +189,15 @@ class HomeViewController: UIViewController {
 			snapShot.appendItems(topic.tutorials, toSection: topic)
 		}
 		// animate changes
+		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+	}
+	private func reloadVisibleTutorialCells() {
+		let visibleTutorials: [Tutorial] = collectionView.indexPathsForVisibleItems.map { visibleIndexPath in
+			let topic = dataSource.snapshot().sectionIdentifiers[visibleIndexPath.section]
+			return topic.tutorials[visibleIndexPath.row]
+		}
+		var snapShot = dataSource.snapshot()
+		snapShot.reloadItems(visibleTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
 }

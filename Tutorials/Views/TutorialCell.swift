@@ -39,7 +39,13 @@ class TutorialCell: UICollectionViewCell {
 			}
 		}
 	}
-	
+	var isQueued: Bool = false {
+		didSet {
+			// only show when Tutorial isQueued
+			isQueuedImageView.isHidden = !isQueued
+		}
+	}
+
 	
 	// MARK: inits
 	override init(frame: CGRect) {
@@ -77,6 +83,7 @@ class TutorialCell: UICollectionViewCell {
 		
 		isQueuedImageView = UIImageView(image: UIImage(systemName: "bookmark.fill"))
 		isQueuedImageView.translatesAutoresizingMaskIntoConstraints = false
+		isQueuedImageView.isHidden = !isQueued
 		contentView.addSubview(isQueuedImageView)
 	}
 	private func layoutTutorialViews() {
