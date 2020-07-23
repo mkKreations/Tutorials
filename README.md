@@ -38,9 +38,11 @@ Tutorials is an iOS app that displays several collections of Tutorial topics as 
 through the different sections of Tutorials and select whichever one interests them. A detail screen displays 
 the details of a specific Tutorial and provides a list of videos related to that Tutorial. Currently, the videos
 are not interactive. However, the user can queue whichever Tutorial topic that are of interest of them and that
-list is maintained within another tab. From here, a user can delete any queued Tutorial topics. This app was designed
-using UIKit and UICompositonalLayout/DiffableDatasource - features from the iOS 13 SDK. Additionally, this app is designed 
-for iOS devices running iOS 13 and up as it uses compositionalLayout and diffableDatasource to manage its collectionViews. 
+list is maintained within another tab. From here, a user can delete any queued Tutorial topics. 
+
+This app was designed using UIKit and UICompositonalLayout/DiffableDatasource - features from the iOS 13 SDK. Additionally,
+this app is designed for iOS devices running iOS 13 and up as it uses compositionalLayout and diffableDatasource to manage
+its collectionViews. 
 
 
 ## Features
