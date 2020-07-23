@@ -28,8 +28,17 @@ class QueuedViewController: UIViewController {
 																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
 																					collectionViewLayout: configureCollectionViewLayout())
 	}()
-	private lazy var trashBarButton: UIBarButtonItem = {
+	private lazy var enabledTrashBarButton: UIBarButtonItem = {
 		let trash = UIBarButtonItem(image: UIImage(systemName: "trash"),
+																style: .plain,
+																target: self,
+																action: #selector(trashBarButtonPressed))
+		return trash
+	}()
+	private lazy var disabledTrashBarButton: UIBarButtonItem = {
+		// pretty cool how we can change tintColor & rendering mode of SFSymbols
+		let disabledTrashImage = UIImage(systemName: "trash")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+		let trash = UIBarButtonItem(image: disabledTrashImage,
 																style: .plain,
 																target: self,
 																action: #selector(trashBarButtonPressed))
@@ -96,12 +105,21 @@ class QueuedViewController: UIViewController {
 	// MARK: bar buttons
 	private func configureBarButtons() {
 		navigationItem.leftBarButtonItem = editButtonItem
-		navigationItem.rightBarButtonItem = trashBarButton
+		// default to disabledTrashBarButton
+		navigationItem.rightBarButtonItem = disabledTrashBarButton
 	}
 	private func manageTrashBarButtonState(forIsEditing editing: Bool) {
-		trashBarButton.isEnabled = (editing &&
-																collectionView.indexPathsForSelectedItems != nil &&
-																!collectionView.indexPathsForSelectedItems!.isEmpty)
+		// determine when to enable trash bar button item
+		let enableTrashBarButton = (editing &&
+		collectionView.indexPathsForSelectedItems != nil &&
+		!collectionView.indexPathsForSelectedItems!.isEmpty)
+
+		// switching between bar button items in order to get free animation
+		navigationItem.setRightBarButton(enableTrashBarButton ? enabledTrashBarButton : disabledTrashBarButton,
+																		 animated: true)
+		
+		// of course - manage actual isEnabled state for whichever button is set
+		navigationItem.rightBarButtonItem!.isEnabled = enableTrashBarButton
 	}
 	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
 		if let selectedIndexPaths = collectionView.indexPathsForSelectedItems,
