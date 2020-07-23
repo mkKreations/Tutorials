@@ -182,4 +182,10 @@ class TutorialDetailViewController: UIViewController {
 		}
 		dataSource.apply(snapShot)
 	}
+	
+	
+	// MARK: status bar
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		.lightContent
+	}
 }

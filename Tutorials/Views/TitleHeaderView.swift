@@ -37,6 +37,7 @@ class TitleHeaderView: UICollectionReusableView {
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.numberOfLines = 2
 		titleLabel.font = .preferredFont(forTextStyle: .title2)
+		titleLabel.textColor = .white
 		addSubview(titleLabel)
 		
 		titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0).isActive = true

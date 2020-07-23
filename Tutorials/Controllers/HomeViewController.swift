@@ -200,6 +200,12 @@ class HomeViewController: UIViewController {
 		snapShot.reloadItems(visibleTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
+	
+	
+	// MARK: status bar
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		.lightContent
+	}
 }
 
 
