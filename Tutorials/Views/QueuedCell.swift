@@ -32,7 +32,7 @@ class QueuedCell: UICollectionViewCell {
 	}
 	override var isSelected: Bool {
 		didSet {
-			checkboxImageView.image = isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+			animateCheckboxImageChange()
 		}
 	}
 	
@@ -115,5 +115,17 @@ class QueuedCell: UICollectionViewCell {
 		
 		checkboxImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0).isActive = true
 		checkboxImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
+	}
+	
+	
+	// MARK: helper methods
+	private func animateCheckboxImageChange() {
+		let selectedImage = isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+		UIView.transition(with: checkboxImageView,
+											duration: 0.25,
+											options: .transitionCrossDissolve,
+											animations: {
+												self.checkboxImageView.image = selectedImage
+		}, completion: nil)
 	}
 }
