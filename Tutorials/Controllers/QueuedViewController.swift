@@ -187,6 +187,12 @@ class QueuedViewController: UIViewController {
 		snapShot.appendItems(controller.queuedTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
+	
+	
+	// MARK: status bar
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		.lightContent
+	}
 }
 
 
