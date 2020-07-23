@@ -8,6 +8,11 @@
 
 import UIKit
 
+// TODO:
+// leaving in code to display QueuedBadgeView because I want to get it
+// working but as of now, I can not get the badges to display correctly
+// going to mimic this behavior using a subview on the QueuedCell instead
+
 class QueuedViewController: UIViewController {
 	// MARK: stored properties
 	private lazy var collectionView: UICollectionView = {
@@ -21,9 +26,22 @@ class QueuedViewController: UIViewController {
 																					y: view.frame.minY,
 																					width: view.frame.size.width,
 																					height: viewHeight - (statusBarHeight + navBarHeight + tabBarHeight)),
-																					collectionViewLayout: UICollectionViewFlowLayout())
+																					collectionViewLayout: configureCollectionViewLayout())
+	}()
+	private lazy var trashBarButton: UIBarButtonItem = {
+		let trash = UIBarButtonItem(image: UIImage(systemName: "trash"),
+																style: .plain,
+																target: self,
+																action: #selector(trashBarButtonPressed))
+		trash.isEnabled = false // default to not enabled
+		return trash
 	}()
 	private var dataSource: UICollectionViewDiffableDataSource<QueuedSection, Tutorial>!
+	private lazy var collectionViewDelegate: QueuedCollectionDelegate = {
+		let collectionDelegate = QueuedCollectionDelegate()
+		collectionDelegate.delegate = self // become delegate
+		return collectionDelegate
+	}()
 	private let controller = TutorialsController.shared
 	lazy var queuedTabBarItem: UITabBarItem = {
 		UITabBarItem(title: title,
@@ -45,20 +63,71 @@ class QueuedViewController: UIViewController {
 		// removes view from going under navBar & tabBar
 		edgesForExtendedLayout = []
 		
+		configureBarButtons()
 		configureCollectionView()
 		configureDatasource()
 	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		applySnapshot() // this applies the snapShot
+		applySnapshot() // applying each time view appears
+	}
+	
+	
+	// MARK: edit mode
+	override func setEditing(_ editing: Bool, animated: Bool) {
+		super.setEditing(editing, animated: animated)
+		
+		// set editing state within our delegate
+		collectionViewDelegate.isEditing = editing
+		
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: editing)
+
+		// update visible cells
+		if !collectionView.indexPathsForVisibleItems.isEmpty {
+			var snapShot = dataSource.snapshot()
+			let visibleTutorials = collectionView.indexPathsForVisibleItems.map { snapShot.itemIdentifiers[$0.row] }
+			snapShot.reloadItems(visibleTutorials)
+			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+		}
+	}
+	
+	
+	// MARK: bar buttons
+	private func configureBarButtons() {
+		navigationItem.leftBarButtonItem = editButtonItem
+		navigationItem.rightBarButtonItem = trashBarButton
+	}
+	private func manageTrashBarButtonState(forIsEditing editing: Bool) {
+		trashBarButton.isEnabled = (editing &&
+																collectionView.indexPathsForSelectedItems != nil &&
+																!collectionView.indexPathsForSelectedItems!.isEmpty)
+	}
+	@objc private func trashBarButtonPressed(_ sender: UIBarButtonItem) {
+		if let selectedIndexPaths = collectionView.indexPathsForSelectedItems,
+			 !selectedIndexPaths.isEmpty {
+			// get current snapShot
+			var snapShot = dataSource.snapshot()
+			// get Tutorial objects from selectedIndexPaths
+			let deletedTutorials = selectedIndexPaths.map { snapShot.itemIdentifiers[$0.row] }
+			// delete Tutorial objects from controller
+			controller.deleteQueuedTutorials(deletedTutorials)
+			// delete Tutorial objects from collectionView
+			snapShot.deleteItems(deletedTutorials)
+			dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+			
+			// reset isEditing
+			isEditing.toggle()
+		}
+		manageTrashBarButtonState(forIsEditing: isEditing)
 	}
 	
 	
 	// MARK: collectionView config
 	private func configureCollectionView() {
-		// override standard flow layout with our custom one
-		collectionView.setCollectionViewLayout(configureCollectionViewLayout(), animated: false)
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
+		collectionView.delegate = collectionViewDelegate
+		collectionView.allowsMultipleSelection = true
 		collectionView.backgroundColor = .black
 		view.addSubview(collectionView)
 	}
@@ -85,17 +154,32 @@ class QueuedViewController: UIViewController {
 	}
 	private func configureDatasource() {
 		dataSource = UICollectionViewDiffableDataSource<QueuedSection, Tutorial>(collectionView: collectionView) {
-			(collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+			[weak self] (collectionView, indexPath, tutorial) -> UICollectionViewCell? in
+			guard let self = self else { return nil } // unpack conditional self
 			guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QueuedCell.reuseIdentifier,
 																													for: indexPath) as? QueuedCell else { return nil }
 			cell.tutorial = tutorial
+			cell.hideCheckbox = !self.isEditing
 			return cell
 		}
 	}
 	private func applySnapshot() {
 		var snapShot = NSDiffableDataSourceSnapshot<QueuedSection, Tutorial>()
 		snapShot.appendSections([.main])
-		snapShot.appendItems(controller.queuedTutorials) // not actual data - sample data for now
+		snapShot.appendItems(controller.queuedTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
+	}
+}
+
+
+// MARK: collectionView delegate extension
+extension QueuedViewController: QueuedSelectionDelegate {
+	func didSelectItem(atIndexPath indexPath: IndexPath) {
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: isEditing)
+	}
+	func didDeselectItem(atIndexPath indexPath: IndexPath) {
+		// manage trash bar button state
+		manageTrashBarButtonState(forIsEditing: isEditing)
 	}
 }

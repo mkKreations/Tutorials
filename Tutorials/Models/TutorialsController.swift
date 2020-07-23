@@ -44,4 +44,11 @@ class TutorialsController {
 			}
 		}
 	}
+	func deleteQueuedTutorials(_ tutorials: [Tutorial]) {
+		tutorials.forEach { deleteQueuedTutorial($0) }
+	}
+	private func deleteQueuedTutorial(_ tutorial: Tutorial) {
+		tutorial.isQueued = false // we no longer want this Tutorial queued
+		queueTutorial(tutorial) // remove from queue
+	}
 }
