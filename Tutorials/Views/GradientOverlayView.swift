@@ -18,8 +18,8 @@ class GradientOverlayView: UIView {
 		
 		// locations
 		let startLocation: NSNumber = 0.0
-		let midLocation: NSNumber = 0.6
-		let endLocation: NSNumber = 0.8
+		let midLocation: NSNumber = 0.3
+		let endLocation: NSNumber = 0.7
 
 		// gradient
 		let gradient = CAGradientLayer()
