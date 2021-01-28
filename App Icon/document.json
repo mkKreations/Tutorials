@@ -3,8 +3,26 @@
   "assets": {
     "_class": "assetCollection",
     "colorAssets": [
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.003921568627450971,
+          "green": 0.3137254901960784,
+          "red": 0.7098039215686275
+        },
+        "name": "Base Layer Brown"
+      }
     ],
     "colors": [
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.003921568627450971,
+        "green": 0.3137254901960784,
+        "red": 0.7098039215686275
+      }
     ],
     "exportPresets": [
     ],
