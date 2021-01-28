@@ -2,7 +2,7 @@
   "_class": "group",
   "booleanOperation": -1,
   "clippingMaskMode": 0,
-  "do_objectID": "979E7061-8F4A-48D1-A3F0-E393D2E7D227",
+  "do_objectID": "4E2D432B-C002-433D-9B8F-B533C071F99B",
   "exportOptions": {
     "_class": "exportOptions",
     "exportFormats": [
@@ -15,10 +15,10 @@
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 513,
-    "width": 513,
-    "x": 1226.796867446372,
-    "y": -987.007275547867
+    "height": 449,
+    "width": 450,
+    "x": 1257.499624869634,
+    "y": -955.9158148132117
   },
   "groupLayout": {
     "_class": "MSImmutableFreeformGroupLayout"
@@ -28,21 +28,25 @@
   "isFixedToViewport": false,
   "isFlippedHorizontal": false,
   "isFlippedVertical": false,
-  "isLocked": true,
+  "isLocked": false,
   "isVisible": true,
   "layerListExpandedType": 2,
   "layers": [
     {
       "class": "rectangle",
-      "id": "F3AEA740-6C07-4366-9786-654201F2D9BA"
+      "id": "3E15E19B-FFBF-43F3-AD96-1AB89B75AD18"
     },
     {
       "class": "rectangle",
-      "id": "6593C209-4A69-406F-B4FD-C249F4C670E1"
+      "id": "239B3F18-9F6D-4A07-A60D-4CEDFED5B5BF"
+    },
+    {
+      "class": "rectangle",
+      "id": "3B4579B6-E270-4B75-AFD4-FEFC1FB7B73F"
     }
   ],
   "maintainScrollPosition": false,
-  "name": "Canvas Base",
+  "name": "Paper Base",
   "nameIsFixed": true,
   "resizingConstraint": 63,
   "resizingType": 0,
