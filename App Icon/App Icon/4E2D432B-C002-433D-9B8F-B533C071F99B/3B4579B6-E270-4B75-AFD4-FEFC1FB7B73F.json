@@ -293,9 +293,9 @@
         "color": {
           "_class": "color",
           "alpha": 1,
-          "blue": 0.003921568627450971,
-          "green": 0.07819655834361712,
-          "red": 0.7098039215686275
+          "blue": 0.9529411764705882,
+          "green": 0.9529411764705882,
+          "red": 0.9529411764705882
         },
         "contextSettings": {
           "_class": "graphicsContextSettings",
@@ -334,7 +334,7 @@
           ],
           "to": "{0.5, 1}"
         },
-        "isEnabled": false,
+        "isEnabled": true,
         "noiseIndex": 0,
         "noiseIntensity": 0,
         "patternFillType": 0,
@@ -345,6 +345,26 @@
     ],
     "miterLimit": 10,
     "shadows": [
+      {
+        "_class": "shadow",
+        "blurRadius": 4,
+        "color": {
+          "_class": "color",
+          "alpha": 0.5,
+          "blue": 0,
+          "green": 0,
+          "red": 0
+        },
+        "contextSettings": {
+          "_class": "graphicsContextSettings",
+          "blendMode": 0,
+          "opacity": 1
+        },
+        "isEnabled": true,
+        "offsetX": 0,
+        "offsetY": 4,
+        "spread": 0
+      }
     ],
     "startMarkerType": 0,
     "windingRule": 1
