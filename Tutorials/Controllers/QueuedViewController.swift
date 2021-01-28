@@ -146,7 +146,7 @@ class QueuedViewController: UIViewController {
 		collectionView.register(QueuedCell.self, forCellWithReuseIdentifier: QueuedCell.reuseIdentifier)
 		collectionView.delegate = collectionViewDelegate
 		collectionView.allowsMultipleSelection = true
-		collectionView.backgroundColor = .black
+		collectionView.backgroundColor = .systemBackground
 		view.addSubview(collectionView)
 	}
 	
@@ -188,11 +188,6 @@ class QueuedViewController: UIViewController {
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
 	
-	
-	// MARK: status bar
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		.lightContent
-	}
 }
 
 
