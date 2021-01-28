@@ -42,7 +42,7 @@ class VideoCell: UICollectionViewCell {
 	private func configureSubviews() {
 		displayLabel.translatesAutoresizingMaskIntoConstraints = false
 		displayLabel.font = .preferredFont(forTextStyle: .body)
-		displayLabel.textColor = .white
+		displayLabel.textColor = .label
 		displayLabel.numberOfLines = 1
 		contentView.addSubview(displayLabel)
 		
