@@ -13,9 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// modify appearance of controls
-		modifyDarkAppearance()
-		
 		// tabBarController
 		let tabBarController = UITabBarController()
 		
@@ -39,19 +36,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 	
-	private func modifyDarkAppearance() {
-		// modify appearance of tabBar of tabBarController
-		// this affects tabBar in every viewController
-		UITabBar.appearance().barTintColor = .black
-
-		// modify navBar appearance
-		// this affects navBar in every viewController
-		let navBarAppearance = UINavigationBarAppearance()
-		navBarAppearance.backgroundColor = .black
-		// this mimics the underline below the navigation bar
-		navBarAppearance.shadowColor = UIColor.darkGray.withAlphaComponent(0.4)
-		navBarAppearance.titleTextAttributes = [ .foregroundColor: UIColor.white]
-		UINavigationBar.appearance().standardAppearance = navBarAppearance
-		UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-	}
 }
