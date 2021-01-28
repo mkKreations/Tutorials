@@ -52,6 +52,10 @@
     {
       "class": "group",
       "id": "FB6CDD19-6DBC-4CA6-9E0B-34327BAFF534"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "8D37B29D-9F78-4D34-8C91-63975B347078"
     }
   ],
   "maintainScrollPosition": false,
