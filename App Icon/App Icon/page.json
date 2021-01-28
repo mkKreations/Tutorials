@@ -120,16 +120,8 @@
       "id": "79CABD0A-61F3-4722-BEE8-5D5F3BD0F8A8"
     },
     {
-      "class": "group",
-      "id": "979E7061-8F4A-48D1-A3F0-E393D2E7D227"
-    },
-    {
-      "class": "group",
-      "id": "4E2D432B-C002-433D-9B8F-B533C071F99B"
-    },
-    {
-      "class": "group",
-      "id": "8C93A3E7-68AB-44E8-AA68-3F50F93F721E"
+      "class": "symbolInstance",
+      "id": "265FEA22-3E90-47BB-9FA1-D9F12F87E597"
     }
   ],
   "maintainScrollPosition": false,

@@ -200,6 +200,39 @@
           "red": 0.4196078431372549
         },
         "name": "Paper Separator - Blue"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3019607843137255,
+          "green": 0.3019607843137255,
+          "red": 1
+        },
+        "name": "Pencil Body 1 - Red"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.2,
+          "green": 0.2,
+          "red": 0.9019607843137255
+        },
+        "name": "Pencil Body 2 - Red"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.09803921568627451,
+          "green": 0.09803921568627451,
+          "red": 0.7019607843137254
+        },
+        "name": "Pencil Body 3 - Red"
       }
     ],
     "colors": [
@@ -328,6 +361,27 @@
         "blue": 0.6549019607843138,
         "green": 0.7803921568627451,
         "red": 0.4196078431372549
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3019607843137255,
+        "green": 0.3019607843137255,
+        "red": 1
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.2,
+        "green": 0.2,
+        "red": 0.9019607843137255
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.09803921568627451,
+        "green": 0.09803921568627451,
+        "red": 0.7019607843137254
       }
     ],
     "exportPresets": [

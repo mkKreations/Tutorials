@@ -1,8 +1,8 @@
 {
-  "_class": "page",
-  "booleanOperation": 0,
+  "_class": "group",
+  "booleanOperation": -1,
   "clippingMaskMode": 0,
-  "do_objectID": "13398760-C737-418E-B10F-C9EF49D8169A",
+  "do_objectID": "8C93A3E7-68AB-44E8-AA68-3F50F93F721E",
   "exportOptions": {
     "_class": "exportOptions",
     "exportFormats": [
@@ -15,41 +15,42 @@
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 300,
-    "width": 300,
-    "x": 0,
-    "y": 0
+    "height": 276,
+    "width": 276,
+    "x": 127.75238460836,
+    "y": 104.4761084768534
   },
   "groupLayout": {
     "_class": "MSImmutableFreeformGroupLayout"
   },
-  "hasClickThrough": true,
+  "hasClickThrough": false,
   "hasClippingMask": false,
-  "horizontalRulerData": {
-    "_class": "rulerData",
-    "base": -371,
-    "guides": [
-    ]
-  },
-  "includeInCloudUpload": true,
   "isFixedToViewport": false,
   "isFlippedHorizontal": false,
   "isFlippedVertical": false,
-  "isLocked": false,
+  "isLocked": true,
   "isVisible": true,
-  "layerListExpandedType": 0,
+  "layerListExpandedType": 2,
   "layers": [
     {
-      "class": "symbolMaster",
-      "id": "BC438AD2-CB51-4AF1-BA34-1B66C109D3E6"
+      "class": "shapePath",
+      "id": "6972E9A6-FC7D-44EA-B448-1C9B1EEEEB8A"
     },
     {
-      "class": "symbolMaster",
-      "id": "1364FACE-3E11-4D0B-A484-276B6CD5ED4F"
+      "class": "group",
+      "id": "FC99D36A-7A1B-4BD7-91D4-57E29B024EFC"
+    },
+    {
+      "class": "group",
+      "id": "6B3FD138-2882-4C89-B48B-F61B87186A29"
+    },
+    {
+      "class": "group",
+      "id": "86EF2A8D-77E8-47CE-BB51-3912B7B40039"
     }
   ],
   "maintainScrollPosition": false,
-  "name": "Symbols",
+  "name": "Pencil",
   "nameIsFixed": true,
   "resizingConstraint": 63,
   "resizingType": 0,
@@ -99,11 +100,5 @@
     ],
     "startMarkerType": 0,
     "windingRule": 1
-  },
-  "verticalRulerData": {
-    "_class": "rulerData",
-    "base": -223,
-    "guides": [
-    ]
   }
 }

@@ -1,8 +1,8 @@
 {
-  "_class": "page",
-  "booleanOperation": 0,
+  "_class": "group",
+  "booleanOperation": -1,
   "clippingMaskMode": 0,
-  "do_objectID": "13398760-C737-418E-B10F-C9EF49D8169A",
+  "do_objectID": "8E0509D3-5B51-4F7B-9CFE-7178531C087A",
   "exportOptions": {
     "_class": "exportOptions",
     "exportFormats": [
@@ -15,23 +15,16 @@
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 300,
-    "width": 300,
+    "height": 513,
+    "width": 513,
     "x": 0,
     "y": 0
   },
   "groupLayout": {
     "_class": "MSImmutableFreeformGroupLayout"
   },
-  "hasClickThrough": true,
+  "hasClickThrough": false,
   "hasClippingMask": false,
-  "horizontalRulerData": {
-    "_class": "rulerData",
-    "base": -371,
-    "guides": [
-    ]
-  },
-  "includeInCloudUpload": true,
   "isFixedToViewport": false,
   "isFlippedHorizontal": false,
   "isFlippedVertical": false,
@@ -40,16 +33,20 @@
   "layerListExpandedType": 0,
   "layers": [
     {
-      "class": "symbolMaster",
-      "id": "BC438AD2-CB51-4AF1-BA34-1B66C109D3E6"
+      "class": "group",
+      "id": "979E7061-8F4A-48D1-A3F0-E393D2E7D227"
     },
     {
-      "class": "symbolMaster",
-      "id": "1364FACE-3E11-4D0B-A484-276B6CD5ED4F"
+      "class": "group",
+      "id": "4E2D432B-C002-433D-9B8F-B533C071F99B"
+    },
+    {
+      "class": "group",
+      "id": "8C93A3E7-68AB-44E8-AA68-3F50F93F721E"
     }
   ],
   "maintainScrollPosition": false,
-  "name": "Symbols",
+  "name": "Pencil App Icon",
   "nameIsFixed": true,
   "resizingConstraint": 63,
   "resizingType": 0,
@@ -99,11 +96,5 @@
     ],
     "startMarkerType": 0,
     "windingRule": 1
-  },
-  "verticalRulerData": {
-    "_class": "rulerData",
-    "base": -223,
-    "guides": [
-    ]
   }
 }
