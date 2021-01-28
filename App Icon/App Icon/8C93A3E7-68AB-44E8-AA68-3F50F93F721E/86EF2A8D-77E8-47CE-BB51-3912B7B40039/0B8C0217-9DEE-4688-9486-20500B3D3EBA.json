@@ -1,8 +1,8 @@
 {
-  "_class": "shapePath",
-  "booleanOperation": 0,
+  "_class": "rectangle",
+  "booleanOperation": -1,
   "clippingMaskMode": 0,
-  "do_objectID": "B214A4DD-0E21-40A0-9D1F-CE9C532BCEBF",
+  "do_objectID": "0B8C0217-9DEE-4688-9486-20500B3D3EBA",
   "edited": true,
   "exportOptions": {
     "_class": "exportOptions",
@@ -13,15 +13,17 @@
     "layerOptions": 0,
     "shouldTrim": false
   },
+  "fixedRadius": 0,
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 91.14567541653322,
-    "width": 91.45295700678753,
-    "x": 1524.193123131965,
-    "y": -868.1116397342776
+    "height": 30.6749723315561,
+    "width": 30.24504153002223,
+    "x": 44.69007813043915,
+    "y": -5.329070518200751e-15
   },
   "hasClippingMask": false,
+  "hasConvertedToNewRoundCorners": true,
   "isClosed": true,
   "isFixedToViewport": false,
   "isFlippedHorizontal": false,
@@ -30,49 +32,50 @@
   "isVisible": true,
   "layerListExpandedType": 0,
   "maintainScrollPosition": false,
-  "name": "Eraser Tip",
+  "name": "Eraser Shine",
   "nameIsFixed": true,
+  "needsConvertionToNewRoundCorners": false,
   "pointRadiusBehaviour": 1,
   "points": [
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{0, 0.24989821635628454}",
-      "curveMode": 1,
-      "curveTo": "{0, 0.24989821635628454}",
-      "hasCurveFrom": false,
-      "hasCurveTo": false,
-      "point": "{0, 0.24989821635628454}"
+      "curveFrom": "{0.18293668305694261, -0.10632000826476845}",
+      "curveMode": 2,
+      "curveTo": "{-0.11440311057529658, 0.17054335501942569}",
+      "hasCurveFrom": true,
+      "hasCurveTo": true,
+      "point": "{0.034266786240822952, 0.032111673377328571}"
     },
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{0.25179014142852268, 0}",
+      "curveFrom": "{0.60886312653316321, 0.35201977874504742}",
       "curveMode": 1,
-      "curveTo": "{0.25179014142852268, 0}",
+      "curveTo": "{0.60886312653316321, 0.35201977874504742}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.25179014142852268, 0}"
+      "point": "{0.60886312653316321, 0.35201977874504742}"
     },
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{1, 0.75300892522566121}",
-      "curveMode": 1,
-      "curveTo": "{1, 0.75300892522566121}",
-      "hasCurveFrom": false,
-      "hasCurveTo": false,
-      "point": "{1, 0.75300892522566121}"
+      "curveFrom": "{0.85005742619199698, 1.1101869717103421}",
+      "curveMode": 2,
+      "curveTo": "{1.0994105790317126, 0.82479207373033392}",
+      "hasCurveFrom": true,
+      "hasCurveTo": true,
+      "point": "{0.97473400261185483, 0.96748952272033795}"
     },
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{0.75538464513686843, 1}",
+      "curveFrom": "{0.38194628516727774, 0.62654597069570339}",
       "curveMode": 1,
-      "curveTo": "{0.75538464513686843, 1}",
+      "curveTo": "{0.38194628516727774, 0.62654597069570339}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.75538464513686843, 1}"
+      "point": "{0.38194628516727774, 0.62654597069570339}"
     }
   ],
   "resizingConstraint": 63,
@@ -145,7 +148,7 @@
           ],
           "to": "{0.5, 1}"
         },
-        "isEnabled": true,
+        "isEnabled": false,
         "position": 0,
         "thickness": 0.3
       }
@@ -170,9 +173,9 @@
         "color": {
           "_class": "color",
           "alpha": 1,
-          "blue": 0.847,
-          "green": 0.847,
-          "red": 0.847
+          "blue": 0.611764705882353,
+          "green": 0.6470588235294118,
+          "red": 0.9568627450980393
         },
         "contextSettings": {
           "_class": "graphicsContextSettings",
@@ -211,7 +214,7 @@
           ],
           "to": "{0.5, 1}"
         },
-        "isEnabled": false,
+        "isEnabled": true,
         "noiseIndex": 0,
         "noiseIntensity": 0,
         "patternFillType": 1,

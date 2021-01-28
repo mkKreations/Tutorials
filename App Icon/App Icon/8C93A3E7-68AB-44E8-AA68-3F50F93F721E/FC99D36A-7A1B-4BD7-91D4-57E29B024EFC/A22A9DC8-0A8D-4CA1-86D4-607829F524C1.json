@@ -1,8 +1,8 @@
 {
-  "_class": "rectangle",
-  "booleanOperation": -1,
+  "_class": "shapePath",
+  "booleanOperation": 0,
   "clippingMaskMode": 0,
-  "do_objectID": "0B8C0217-9DEE-4688-9486-20500B3D3EBA",
+  "do_objectID": "A22A9DC8-0A8D-4CA1-86D4-607829F524C1",
   "edited": true,
   "exportOptions": {
     "_class": "exportOptions",
@@ -13,17 +13,15 @@
     "layerOptions": 0,
     "shouldTrim": false
   },
-  "fixedRadius": 0,
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 30.6749723315561,
-    "width": 30.24504153002223,
-    "x": 1568.883201262404,
-    "y": -869.0966644266473
+    "height": 102.6063399508434,
+    "width": 102.8857261062115,
+    "x": 9.947598300641403e-14,
+    "y": 0
   },
   "hasClippingMask": false,
-  "hasConvertedToNewRoundCorners": true,
   "isClosed": true,
   "isFixedToViewport": false,
   "isFlippedHorizontal": false,
@@ -32,50 +30,39 @@
   "isVisible": true,
   "layerListExpandedType": 0,
   "maintainScrollPosition": false,
-  "name": "Eraser Shine",
+  "name": "Tip - Wood",
   "nameIsFixed": true,
-  "needsConvertionToNewRoundCorners": false,
   "pointRadiusBehaviour": 1,
   "points": [
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{0.18293668305694261, -0.10632000826476845}",
-      "curveMode": 2,
-      "curveTo": "{-0.11440311057529658, 0.17054335501942569}",
-      "hasCurveFrom": true,
-      "hasCurveTo": true,
-      "point": "{0.034266786240822952, 0.032111673377328571}"
-    },
-    {
-      "_class": "curvePoint",
-      "cornerRadius": 0,
-      "curveFrom": "{0.60886312653316321, 0.35201977874504742}",
+      "curveFrom": "{0.33126587438462046, 0}",
       "curveMode": 1,
-      "curveTo": "{0.60886312653316321, 0.35201977874504742}",
+      "curveTo": "{0.33126587438462046, 0}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.60886312653316321, 0.35201977874504742}"
+      "point": "{0.33126587438462046, 0}"
     },
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{0.85005742619199698, 1.1101869717103421}",
-      "curveMode": 2,
-      "curveTo": "{1.0994105790317126, 0.82479207373033392}",
-      "hasCurveFrom": true,
-      "hasCurveTo": true,
-      "point": "{0.97473400261185483, 0.96748952272033795}"
-    },
-    {
-      "_class": "curvePoint",
-      "cornerRadius": 0,
-      "curveFrom": "{0.38194628516727774, 0.62654597069570339}",
+      "curveFrom": "{0, 1}",
       "curveMode": 1,
-      "curveTo": "{0.38194628516727774, 0.62654597069570339}",
+      "curveTo": "{0, 1}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.38194628516727774, 0.62654597069570339}"
+      "point": "{0, 1}"
+    },
+    {
+      "_class": "curvePoint",
+      "cornerRadius": 0,
+      "curveFrom": "{0.99999999999999978, 0.67197620455034068}",
+      "curveMode": 1,
+      "curveTo": "{0.99999999999999978, 0.67197620455034068}",
+      "hasCurveFrom": false,
+      "hasCurveTo": false,
+      "point": "{0.99999999999999978, 0.67197620455034068}"
     }
   ],
   "resizingConstraint": 63,
@@ -148,7 +135,7 @@
           ],
           "to": "{0.5, 1}"
         },
-        "isEnabled": true,
+        "isEnabled": false,
         "position": 0,
         "thickness": 0.3
       }
@@ -173,9 +160,9 @@
         "color": {
           "_class": "color",
           "alpha": 1,
-          "blue": 0.847,
-          "green": 0.847,
-          "red": 0.847
+          "blue": 0.3058823529411764,
+          "green": 0.6039215686274509,
+          "red": 0.8901960784313725
         },
         "contextSettings": {
           "_class": "graphicsContextSettings",
@@ -214,7 +201,7 @@
           ],
           "to": "{0.5, 1}"
         },
-        "isEnabled": false,
+        "isEnabled": true,
         "noiseIndex": 0,
         "noiseIntensity": 0,
         "patternFillType": 1,

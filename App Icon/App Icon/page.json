@@ -128,36 +128,8 @@
       "id": "4E2D432B-C002-433D-9B8F-B533C071F99B"
     },
     {
-      "class": "shapePath",
-      "id": "6972E9A6-FC7D-44EA-B448-1C9B1EEEEB8A"
-    },
-    {
-      "class": "shapePath",
-      "id": "A22A9DC8-0A8D-4CA1-86D4-607829F524C1"
-    },
-    {
-      "class": "shapePath",
-      "id": "61849841-0893-40E3-B754-7BA9DC43C90E"
-    },
-    {
-      "class": "shapePath",
-      "id": "DFE2663B-5B48-476A-9EC1-047A625DC3D3"
-    },
-    {
-      "class": "shapePath",
-      "id": "7FC462A7-30A8-412C-820B-C74177321D36"
-    },
-    {
-      "class": "shapePath",
-      "id": "C88B43F9-423B-4776-A843-FA7266AC1110"
-    },
-    {
-      "class": "shapePath",
-      "id": "B214A4DD-0E21-40A0-9D1F-CE9C532BCEBF"
-    },
-    {
-      "class": "rectangle",
-      "id": "0B8C0217-9DEE-4688-9486-20500B3D3EBA"
+      "class": "group",
+      "id": "8C93A3E7-68AB-44E8-AA68-3F50F93F721E"
     }
   ],
   "maintainScrollPosition": false,

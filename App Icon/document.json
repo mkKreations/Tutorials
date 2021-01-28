@@ -68,6 +68,94 @@
           "red": 0.7647058823529411
         },
         "name": "Paper Line"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.4784313725490196,
+          "green": 0.5333333333333333,
+          "red": 0.9725490196078431
+        },
+        "name": "Pencil Eraser"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3372549019607843,
+          "green": 0.3098039215686275,
+          "red": 0.2784313725490196
+        },
+        "name": "Pencil Tip - Lead"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3058823529411764,
+          "green": 0.6039215686274509,
+          "red": 0.8901960784313725
+        },
+        "name": "Pencil Tip - Wood"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.4,
+          "green": 0.8588235294117647,
+          "red": 0.2039215686274511
+        },
+        "name": "Pencil Body 1"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3607843137254904,
+          "green": 0.7725490196078432,
+          "red": 0.1803921568627451
+        },
+        "name": "Pencil Body 2"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3058823529411765,
+          "green": 0.6431372549019608,
+          "red": 0.1450980392156863
+        },
+        "name": "Pencil Body 3"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.8352941176470589,
+          "green": 0.8352941176470589,
+          "red": 0.8352941176470589
+        },
+        "name": "Pencil Eraser Tip"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.611764705882353,
+          "green": 0.6470588235294118,
+          "red": 0.9568627450980393
+        },
+        "name": "Pencil Eraser Gloss"
       }
     ],
     "colors": [
@@ -112,6 +200,62 @@
         "blue": 0.7647058823529411,
         "green": 0.7647058823529411,
         "red": 0.7647058823529411
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.4784313725490196,
+        "green": 0.5333333333333333,
+        "red": 0.9725490196078431
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3372549019607843,
+        "green": 0.3098039215686275,
+        "red": 0.2784313725490196
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3058823529411764,
+        "green": 0.6039215686274509,
+        "red": 0.8901960784313725
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.4,
+        "green": 0.8588235294117647,
+        "red": 0.2039215686274511
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3607843137254904,
+        "green": 0.7725490196078432,
+        "red": 0.1803921568627451
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3058823529411765,
+        "green": 0.6431372549019608,
+        "red": 0.1450980392156863
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.8352941176470589,
+        "green": 0.8352941176470589,
+        "red": 0.8352941176470589
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.611764705882353,
+        "green": 0.6470588235294118,
+        "red": 0.9568627450980393
       }
     ],
     "exportPresets": [
