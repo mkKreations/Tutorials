@@ -2,7 +2,7 @@
   "_class": "group",
   "booleanOperation": -1,
   "clippingMaskMode": 0,
-  "do_objectID": "4E2D432B-C002-433D-9B8F-B533C071F99B",
+  "do_objectID": "08D909CF-8C75-4345-841F-0854845F1601",
   "exportOptions": {
     "_class": "exportOptions",
     "exportFormats": [
@@ -15,10 +15,10 @@
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 449,
-    "width": 450,
-    "x": 1257.499624869634,
-    "y": -955.9158148132117
+    "height": 321,
+    "width": 449,
+    "x": 0.0003751303663648287,
+    "y": 49.41581481321168
   },
   "groupLayout": {
     "_class": "MSImmutableFreeformGroupLayout"
@@ -33,24 +33,32 @@
   "layerListExpandedType": 2,
   "layers": [
     {
-      "class": "rectangle",
-      "id": "3E15E19B-FFBF-43F3-AD96-1AB89B75AD18"
+      "class": "shapePath",
+      "id": "FAB7A1CD-61CE-4025-A8E6-79434CD9615B"
     },
     {
-      "class": "rectangle",
-      "id": "239B3F18-9F6D-4A07-A60D-4CEDFED5B5BF"
+      "class": "shapePath",
+      "id": "0002DA72-3943-4F4B-A8D8-D2924C0B01C0"
     },
     {
-      "class": "rectangle",
-      "id": "3B4579B6-E270-4B75-AFD4-FEFC1FB7B73F"
+      "class": "shapePath",
+      "id": "F4AEBEC9-29D1-4E2B-B43A-DA6D09D7679E"
     },
     {
-      "class": "group",
-      "id": "08D909CF-8C75-4345-841F-0854845F1601"
+      "class": "shapePath",
+      "id": "5F0C4846-E8FA-42F3-BD12-B83D0B5F1725"
+    },
+    {
+      "class": "shapePath",
+      "id": "158E7675-D088-47FE-8EAD-4D93E2F72271"
+    },
+    {
+      "class": "shapePath",
+      "id": "5FE2D930-23A9-46A3-8A4B-AE1904C057E6"
     }
   ],
   "maintainScrollPosition": false,
-  "name": "Paper Base",
+  "name": "Lines",
   "nameIsFixed": true,
   "resizingConstraint": 63,
   "resizingType": 0,
