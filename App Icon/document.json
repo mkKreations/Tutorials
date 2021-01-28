@@ -13,6 +13,17 @@
           "red": 0.7098039215686275
         },
         "name": "Base Layer Brown"
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.1294117647058824,
+          "green": 0.4509803921568628,
+          "red": 0.7686274509803922
+        },
+        "name": "Small Base Layer Brown"
       }
     ],
     "colors": [
@@ -22,6 +33,13 @@
         "blue": 0.003921568627450971,
         "green": 0.3137254901960784,
         "red": 0.7098039215686275
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.1294117647058824,
+        "green": 0.4509803921568628,
+        "red": 0.7686274509803922
       }
     ],
     "exportPresets": [
