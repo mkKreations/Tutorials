@@ -39,6 +39,18 @@ final class Tutorial {
 		self.content = content
 		self.updateCount = updateCount
 	}
+	
+	// adding CodingKeys to silence compiler warning
+	// id does not need to be decoded - has initial value
+	enum CodingKeys: String, CodingKey {
+		case title
+		case thumbnail
+		case artworkColor
+		case publishDate
+		case isQueued
+		case content
+		case updateCount
+	}
 }
 
 

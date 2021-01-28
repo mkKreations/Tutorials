@@ -51,7 +51,7 @@ class QueuedCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
-		contentView.backgroundColor = .darkGray
+		contentView.backgroundColor = .systemGray2
 		contentView.layer.cornerRadius = 10.0
 		
 		configureQueuedSubviews()
@@ -85,7 +85,7 @@ class QueuedCell: UICollectionViewCell {
 		
 		detailLabel.translatesAutoresizingMaskIntoConstraints = false
 		detailLabel.font = .preferredFont(forTextStyle: .body)
-		detailLabel.textColor = .lightGray
+		detailLabel.textColor = .systemGray4
 		detailLabel.numberOfLines = 1
 		labelStackView.addArrangedSubview(detailLabel)
 		

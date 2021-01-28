@@ -39,7 +39,7 @@ class TutorialDetailViewController: UIViewController {
 		title = tutorial.title
 		navigationController?.navigationBar.prefersLargeTitles = false
 
-		view.backgroundColor = .black
+		view.backgroundColor = .systemBackground
 		
 		edgesForExtendedLayout = []
 		
@@ -94,7 +94,7 @@ class TutorialDetailViewController: UIViewController {
 		topView.tutorialQueueButton.addTarget(self, action: #selector(queueButtonPressed), for: .touchUpInside)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView.backgroundColor = .black
+		collectionView.backgroundColor = .systemBackground
 		collectionView.register(VideoCell.self, forCellWithReuseIdentifier: VideoCell.reuseIdentifier)
 		collectionView.register(TitleHeaderView.self,
 														forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -110,7 +110,7 @@ class TutorialDetailViewController: UIViewController {
 		collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6.0).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6.0).isActive = true
-		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -6.0).isActive = true
+		collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 	}
 	
 	
@@ -182,10 +182,5 @@ class TutorialDetailViewController: UIViewController {
 		}
 		dataSource.apply(snapShot)
 	}
-	
-	
-	// MARK: status bar
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		.lightContent
-	}
+		
 }

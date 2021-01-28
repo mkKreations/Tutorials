@@ -47,7 +47,7 @@ class TutorialDetailTopView: UIView {
 		
 		tutorialTitleLabel.translatesAutoresizingMaskIntoConstraints = false
 		tutorialTitleLabel.font = .preferredFont(forTextStyle: .title1)
-		tutorialTitleLabel.textColor = .white
+		tutorialTitleLabel.textColor = .label
 		tutorialTitleLabel.numberOfLines = 2
 		tutorialStackView.addArrangedSubview(tutorialTitleLabel)
 		

@@ -68,7 +68,7 @@ class HomeViewController: UIViewController {
 		collectionView.register(QueuedBadgeView.self,
 														forSupplementaryViewOfKind: Self.queuedBadgeKind,
 														withReuseIdentifier: QueuedBadgeView.reuseIdentifier)
-		collectionView.backgroundColor = .black
+		collectionView.backgroundColor = .systemBackground
 		view.addSubview(collectionView)
 	}
 
@@ -200,12 +200,7 @@ class HomeViewController: UIViewController {
 		snapShot.reloadItems(visibleTutorials)
 		dataSource.apply(snapShot, animatingDifferences: true, completion: nil)
 	}
-	
-	
-	// MARK: status bar
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		.lightContent
-	}
+		
 }
 
 
