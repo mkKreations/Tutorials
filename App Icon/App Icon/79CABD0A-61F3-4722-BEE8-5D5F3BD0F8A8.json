@@ -33,7 +33,7 @@
   "isFlippedHorizontal": false,
   "isFlippedVertical": false,
   "isLocked": true,
-  "isVisible": false,
+  "isVisible": true,
   "layerListExpandedType": 0,
   "maintainScrollPosition": false,
   "name": "Reference Image Copy",
