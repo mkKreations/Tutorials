@@ -16,10 +16,10 @@
   "frame": {
     "_class": "rect",
     "constrainProportions": false,
-    "height": 2,
-    "width": 420,
-    "x": 14,
-    "y": 318.5
+    "height": 1,
+    "width": 427,
+    "x": 11,
+    "y": 320.5
   },
   "hasClippingMask": false,
   "isClosed": false,
@@ -37,22 +37,22 @@
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{-0.029761904761904767, 0.75000000000000067}",
+      "curveFrom": "{-0.022248243559718987, 0.50000000000000144}",
       "curveMode": 1,
-      "curveTo": "{-0.029761904761904767, 0.75000000000000067}",
+      "curveTo": "{-0.022248243559718987, 0.50000000000000144}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.0017857142857142356, 0.62499999999999989}"
+      "point": "{0, 0.5}"
     },
     {
       "_class": "curvePoint",
       "cornerRadius": 0,
-      "curveFrom": "{-0.029761904761904767, 0.75000000000000067}",
+      "curveFrom": "{-0.022248243559718987, 0.50000000000000144}",
       "curveMode": 1,
-      "curveTo": "{-0.029761904761904767, 0.75000000000000067}",
+      "curveTo": "{-0.022248243559718987, 0.50000000000000144}",
       "hasCurveFrom": false,
       "hasCurveTo": false,
-      "point": "{0.99940476190476213, 0.625}"
+      "point": "{1.0000000000000002, 0.50000000000000011}"
     }
   ],
   "resizingConstraint": 63,
@@ -84,9 +84,9 @@
         "color": {
           "_class": "color",
           "alpha": 1,
-          "blue": 0.7647058823529411,
-          "green": 0.7647058823529411,
-          "red": 0.7647058823529411
+          "blue": 0.6549019607843138,
+          "green": 0.7803921568627451,
+          "red": 0.4196078431372549
         },
         "contextSettings": {
           "_class": "graphicsContextSettings",

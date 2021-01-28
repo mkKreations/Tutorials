@@ -29,8 +29,8 @@
   "isFlippedHorizontal": false,
   "isFlippedVertical": false,
   "isLocked": true,
-  "isVisible": false,
-  "layerListExpandedType": 1,
+  "isVisible": true,
+  "layerListExpandedType": 2,
   "layers": [
     {
       "class": "rectangle",

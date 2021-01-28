@@ -19,7 +19,7 @@
     "height": 2,
     "width": 448,
     "x": 0.25,
-    "y": 190.75
+    "y": 191.75
   },
   "hasClippingMask": false,
   "isClosed": false,
@@ -84,9 +84,9 @@
         "color": {
           "_class": "color",
           "alpha": 1,
-          "blue": 0.7647058823529411,
-          "green": 0.7647058823529411,
-          "red": 0.7647058823529411
+          "blue": 0.6549019607843138,
+          "green": 0.7803921568627451,
+          "red": 0.4196078431372549
         },
         "contextSettings": {
           "_class": "graphicsContextSettings",
